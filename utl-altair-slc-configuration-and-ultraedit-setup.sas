@@ -275,77 +275,80 @@ II  ULTRAEDIT CONFIGUARATION WIN 11 64bit
 
 III  SAMPLE SLC REPRODUCIBLE PROBLEMS
 
-  ALL OF THESE HAVE ARE IN ROGER GITHUB
+Select slc from d:/git/git_010_repos.sasbdat
 
-  https://github.com/rogerjdeangelis/
+REPO
+----------------------------------------------------------------------------------------------------------------------------------------------
+https://github.com/rogerjdeangelis/-utl-monarch-and-altair-personal-slc-creating-and-converting-pdf-tables-to-text
+https://github.com/rogerjdeangelis/setup-personal-edition-altair-slc-eclipse-workspace-config-sasautos-sasuser-saswork-autoexec
+https://github.com/rogerjdeangelis/utl-RE-Altair-Personal-slc-Monarch-Learning-Series_2023-Exercise_6-Sales---Inventory-Analysis
+https://github.com/rogerjdeangelis/utl-RE-altair-personal-slc-scan-line-after-string-O1-then-extract-number-after-E1-on-next-line
+https://github.com/rogerjdeangelis/utl-add-group-sums-to-each-record-in-a-group-along-with-inuput-row-altair-personal-slc
+https://github.com/rogerjdeangelis/utl-adding-a-column-to-excelsheet-using-personal-altair-slc
+https://github.com/rogerjdeangelis/utl-altair-monarch-and-personal-altair-slc-compute-business-days-between-two-dates
+https://github.com/rogerjdeangelis/utl-altair-monarch-and-personal-slc-reading-and-writing-dbf-files
+https://github.com/rogerjdeangelis/utl-altair-monarch-and-personal-slc-using-ocr-to-extract-text-from-images-tesseract
+https://github.com/rogerjdeangelis/utl-altair-personal-slc-accessing-postgresql-read-write-access-meta-data
+https://github.com/rogerjdeangelis/utl-altair-personal-slc-add-a-columm-called-date-containing-the-last-day-of-the-previous-month
+https://github.com/rogerjdeangelis/utl-altair-personal-slc-comparing-two-excel-workbook-sheets
+https://github.com/rogerjdeangelis/utl-altair-personal-slc-concatenating-rows-by-id-using-datasteps-and-workaround-for-sqlite-bug
+https://github.com/rogerjdeangelis/utl-altair-personal-slc-constrained-linear-regression-to-reduce-penalties-for-over-under-estimates
+https://github.com/rogerjdeangelis/utl-altair-personal-slc-create-sas-dataset-without-sas-from-any-language-with-a-cli
+https://github.com/rogerjdeangelis/utl-altair-personal-slc-creating-and-analyzing-tables-created-from-multiple-pdf-and-excel-files
+https://github.com/rogerjdeangelis/utl-altair-personal-slc-digitize-images-and-output-points-to-excel
+https://github.com/rogerjdeangelis/utl-altair-personal-slc-disabling-precode-html-destination-and-adding-help-datasets-metadata
+https://github.com/rogerjdeangelis/utl-altair-personal-slc-exercise-42-inventory-report-analysis
+https://github.com/rogerjdeangelis/utl-altair-personal-slc-exploded-text-using-workaround-to-submit-r-python-inside-slc-macro
+https://github.com/rogerjdeangelis/utl-altair-personal-slc-extracting-summary-statistics-from-a-complex-invoice-text-file
+https://github.com/rogerjdeangelis/utl-altair-personal-slc-identify-centroids-of-clusters-and-plot-convex-hull
+https://github.com/rogerjdeangelis/utl-altair-personal-slc-issue-importing-excel-sheet-where-column-names-are-in-the-third-row
+https://github.com/rogerjdeangelis/utl-altair-personal-slc-monarch-exercise-39-bank-statement-analysis
+https://github.com/rogerjdeangelis/utl-altair-personal-slc-monarch-exercise_26-meditech-detail-trial-balance-vs-transactions
+https://github.com/rogerjdeangelis/utl-altair-personal-slc-odbc-connections-to-and-from-ms-sql-server-with-and-without-passthru
+https://github.com/rogerjdeangelis/utl-altair-personal-slc-odbc-connections-to-and-from-mysql-with-and-without-passthru
+https://github.com/rogerjdeangelis/utl-altair-personal-slc-odbc-sqlite-read-write-access-meta-data
+https://github.com/rogerjdeangelis/utl-altair-personal-slc-optimum-lamda-for-box-cox-regression
+https://github.com/rogerjdeangelis/utl-altair-personal-slc-parsing-colon-separated-words-in-a-complex-realestate-report
+https://github.com/rogerjdeangelis/utl-altair-personal-slc-pca-principle-component-analysis
+https://github.com/rogerjdeangelis/utl-altair-personal-slc-postgresql-passthru-select-first-ob-by-group-ordered-by-specific-variables
+https://github.com/rogerjdeangelis/utl-altair-personal-slc-powerfull-text-file-parsing-using-slc-input-statement
+https://github.com/rogerjdeangelis/utl-altair-personal-slc-select-records-in-transaction-worksheet-that-are-not-in-master-worksheet
+https://github.com/rogerjdeangelis/utl-altair-personal-slc-selecting-the-sum-of-expenses-by-week-for-current-year
+https://github.com/rogerjdeangelis/utl-altair-personal-slc-staistical-visualizations-of-altair-dxf-file-and-render-as-pdf
+https://github.com/rogerjdeangelis/utl-altair-personal-slc-sum-open-and-closing-balances-by-account
+https://github.com/rogerjdeangelis/utl-altair-personal-slc-sumpy-closed-form-solutions-for-a-solid-rotating-disk
+https://github.com/rogerjdeangelis/utl-altair-personal-slc-usng-an-excel-database-to-analyze-healthcare-labor-costs
+https://github.com/rogerjdeangelis/utl-altair-slc-convert-pdf-tables-to-excel-sheets
+https://github.com/rogerjdeangelis/utl-altair-slc-monarch-exercise3-composers-analysis
+https://github.com/rogerjdeangelis/utl-altair-slc-reading-and-writing-OpenDocument-spreadsheets-using-r-and-python
+https://github.com/rogerjdeangelis/utl-altair-slc-to-fill-gaps-in-proc-sql-select-third-place-in-the-daily-double-r-python-solutions
+https://github.com/rogerjdeangelis/utl-altair-slc-ultraedit-a-better-IDE-than-eclipse-maybe
+https://github.com/rogerjdeangelis/utl-annotate-points-on-a-map-using-the-personal-edition-of-the-altair-slc
+https://github.com/rogerjdeangelis/utl-automating-excel-data-preperation-monarch-and-altair-percsonal-slc
+https://github.com/rogerjdeangelis/utl-calling-python-from-personal-altair-slc-and-integrating-python-with-sql
+https://github.com/rogerjdeangelis/utl-calling-r-from-personal-altair-slc-and-integrating-r-with-sql
+https://github.com/rogerjdeangelis/utl-converting-sas-formats-sas7bcats-to-altair-personal-slc-formats-wpccat
+https://github.com/rogerjdeangelis/utl-directing-output-to-a-listing-window-when-using-the-personal-altair-slc-
+https://github.com/rogerjdeangelis/utl-dropping-down-to-powershell-from-personal-altair-slc
+https://github.com/rogerjdeangelis/utl-generating-complete-case-when-logic-for-decision-trees-using-altair-personal-slc
+https://github.com/rogerjdeangelis/utl-how-to-create-a-sas-dataset-from-python-panda-dataframe-using-the-personal-altair-slc
+https://github.com/rogerjdeangelis/utl-how-to-create-a-sas-dataset-from-r-dataframe-using-the-personal-altair-slc
+https://github.com/rogerjdeangelis/utl-monarch-altair-personal-slc-combine-two-tables-in-one-excel-sheet
+https://github.com/rogerjdeangelis/utl-monarch-altair-personal-slc-inserting-smart-line-breaks-in-a-long-block-of-text
+https://github.com/rogerjdeangelis/utl-monarch-and-altair-personal-slc-convert-many-pdf-files-with-tables-to-excel-workbooks-by-date
+https://github.com/rogerjdeangelis/utl-monarch-and-altair-personal-slc-create-excel-report-with-subtotals-and-grand-total
+https://github.com/rogerjdeangelis/utl-monarch-and-altair-personal-slc-import-excel-sheet-with-many-tabs
+https://github.com/rogerjdeangelis/utl-monarch-and-altair-personal-slc-pivot-long-transpose
+https://github.com/rogerjdeangelis/utl-monarch-and-altair-personal-slc-reading-and-writing-google-sheets
+https://github.com/rogerjdeangelis/utl-monarch-and-personal-altair-slc-odbc-appending-rows-to-an-existing-excel-sheet
+https://github.com/rogerjdeangelis/utl-monarch-and-personal-altair-slc-reading-excel-pivot-tables
+https://github.com/rogerjdeangelis/utl-monarch-and-personal-slc-appending-all-sheets-to-first-sheet-Excel97-2003-workbooks
+https://github.com/rogerjdeangelis/utl-odbc-passthrough-to-sqlite-file-database-fails-with-the-altair-personal-slc
+https://github.com/rogerjdeangelis/utl-personal-altair-slc-convert-sas-datastep-to-slc-sql-odbc-r-python
+https://github.com/rogerjdeangelis/utl-personal-altair-slc-with-matlab-sympy-and-r-finite-element-cold-plate-heat-transfer
+https://github.com/rogerjdeangelis/utl-post-weekend-and-holiday-sales-to-the-next-business-weekday-using-personal-altair-slc
+https://github.com/rogerjdeangelis/utl-psuedo-batch-personal-altair-slc-and-calling-slc-from-python-and-r
+https://github.com/rogerjdeangelis/utl-sqllite-odbc-driver-works-with-r-and-with-personal-altair-slc
+https://github.com/rogerjdeangelis/utl-workaround-for-the-altair-personal-slc-sqlite-passthru-and-python-bugs
 
-   utl-monarch-and-altair-personal-slc-creating-and-converting-pdf-tables-to-text
-   utl-RE-Altair-Personal-slc-Monarch-Learning-Series_2023-Exercise_6-Sales---Inventory-Analysis
-   utl-RE-altair-personal-slc-scan-line-after-string-O1-then-extract-number-after-E1-on-next-line
-   utl-add-group-sums-to-each-record-in-a-group-along-with-inuput-row-altair-personal-slc
-   utl-adding-a-column-to-excelsheet-using-personal-altair-slc
-   utl-altair-monarch-and-personal-altair-slc-compute-business-days-between-two-dates
-   utl-altair-monarch-and-personal-slc-reading-and-writing-dbf-files
-   utl-altair-monarch-and-personal-slc-using-ocr-to-extract-text-from-images-tesseract
-   utl-altair-personal-slc-accessing-postgresql-read-write-access-meta-data
-   utl-altair-personal-slc-add-a-columm-called-date-containing-the-last-day-of-the-previous-month
-   utl-altair-personal-slc-comparing-two-excel-workbook-sheets
-   utl-altair-personal-slc-concatenating-rows-by-id-using-datasteps-and-workaround-for-sqlite-bug
-   utl-altair-personal-slc-constrained-linear-regression-to-reduce-penalties-for-over-under-estimates
-   utl-altair-personal-slc-create-sas-dataset-without-sas-from-any-language-with-a-cli
-   utl-altair-personal-slc-creating-and-analyzing-tables-created-from-multiple-pdf-and-excel-files
-   utl-altair-personal-slc-digitize-images-and-output-points-to-excel
-   utl-altair-personal-slc-disabling-precode-html-destination-and-adding-help-datasets-metadata
-   utl-altair-personal-slc-exercise-42-inventory-report-analysis
-   utl-altair-personal-slc-exploded-text-using-workaround-to-submit-r-python-inside-slc-macro
-   utl-altair-personal-slc-extracting-summary-statistics-from-a-complex-invoice-text-file
-   utl-altair-personal-slc-identify-centroids-of-clusters-and-plot-convex-hull
-   utl-altair-personal-slc-issue-importing-excel-sheet-where-column-names-are-in-the-third-row
-   utl-altair-personal-slc-monarch-exercise-39-bank-statement-analysis
-   utl-altair-personal-slc-monarch-exercise_26-meditech-detail-trial-balance-vs-transactions
-   utl-altair-personal-slc-odbc-connections-to-and-from-ms-sql-server-with-and-without-passthru
-   utl-altair-personal-slc-odbc-connections-to-and-from-mysql-with-and-without-passthru
-   utl-altair-personal-slc-odbc-sqlite-read-write-access-meta-data
-   utl-altair-personal-slc-optimum-lamda-for-box-cox-regression
-   utl-altair-personal-slc-parsing-colon-separated-words-in-a-complex-realestate-report
-   utl-altair-personal-slc-pca-principle-component-analysis
-   utl-altair-personal-slc-postgresql-passthru-select-first-ob-by-group-ordered-by-specific-variables
-   utl-altair-personal-slc-powerfull-text-file-parsing-using-slc-input-statement
-   utl-altair-personal-slc-select-records-in-transaction-worksheet-that-are-not-in-master-worksheet
-   utl-altair-personal-slc-selecting-the-sum-of-expenses-by-week-for-current-year
-   utl-altair-personal-slc-staistical-visualizations-of-altair-dxf-file-and-render-as-pdf
-   utl-altair-personal-slc-sum-open-and-closing-balances-by-account
-   utl-altair-personal-slc-sumpy-closed-form-solutions-for-a-solid-rotating-disk
-   utl-altair-personal-slc-usng-an-excel-database-to-analyze-healthcare-labor-costs
-   utl-altair-slc-convert-pdf-tables-to-excel-sheets
-   utl-altair-slc-monarch-exercise3-composers-analysis
-   utl-altair-slc-reading-and-writing-OpenDocument-spreadsheets-using-r-and-python
-   utl-altair-slc-to-fill-gaps-in-proc-sql-select-third-place-in-the-daily-double-r-python-solutions
-   utl-altair-slc-ultraedit-a-better-IDE-than-eclipse-maybe
-   utl-annotate-points-on-a-map-using-the-personal-edition-of-the-altair-slc
-   utl-automating-excel-data-preperation-monarch-and-altair-percsonal-slc
-   utl-calling-python-from-personal-altair-slc-and-integrating-python-with-sql
-   utl-calling-r-from-personal-altair-slc-and-integrating-r-with-sql
-   utl-converting-sas-formats-sas7bcats-to-altair-personal-slc-formats-wpccat
-   utl-directing-output-to-a-listing-window-when-using-the-personal-altair-slc-
-   utl-dropping-down-to-powershell-from-personal-altair-slc
-   utl-generating-complete-case-when-logic-for-decision-trees-using-altair-personal-slc
-   utl-how-to-create-a-sas-dataset-from-python-panda-dataframe-using-the-personal-altair-slc
-   utl-how-to-create-a-sas-dataset-from-r-dataframe-using-the-personal-altair-slc
-   utl-monarch-altair-personal-slc-combine-two-tables-in-one-excel-sheet
-   utl-monarch-altair-personal-slc-inserting-smart-line-breaks-in-a-long-block-of-text
-   utl-monarch-and-altair-personal-slc-convert-many-pdf-files-with-tables-to-excel-workbooks-by-date
-   utl-monarch-and-altair-personal-slc-create-excel-report-with-subtotals-and-grand-total
-   utl-monarch-and-altair-personal-slc-import-excel-sheet-with-many-tabs
-   utl-monarch-and-altair-personal-slc-pivot-long-transpose
-   utl-monarch-and-altair-personal-slc-reading-and-writing-google-sheets
-   utl-monarch-and-personal-altair-slc-odbc-appending-rows-to-an-existing-excel-sheet
-   utl-monarch-and-personal-altair-slc-reading-excel-pivot-tables
-   utl-monarch-and-personal-slc-appending-all-sheets-to-first-sheet-Excel97-2003-workbooks
-   utl-odbc-passthrough-to-sqlite-file-database-fails-with-the-altair-personal-slc
-   utl-personal-altair-slc-convert-sas-datastep-to-slc-sql-odbc-r-python
-   utl-personal-altair-slc-with-matlab-sympy-and-r-finite-element-cold-plate-heat-transfer
-   utl-post-weekend-and-holiday-sales-to-the-next-business-weekday-using-personal-altair-slc
-   utl-psuedo-batch-personal-altair-slc-and-calling-slc-from-python-and-r
-   utl-sqllite-odbc-driver-works-with-r-and-with-personal-altair-slc
-   utl-workaround-for-the-altair-personal-slc-sqlite-passthru-and-python-bugs
+
