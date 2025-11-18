@@ -61,6 +61,8 @@ Altair SLC configuration and UltraEdit setup
              open commad window
              enter
              refreshenv
+             if refresenv fails, open task manager cnt-alt-delete and restart windows explorer
+             refreshenv worked in win 10, but failled after I instlled win 11?
 
           f  check the environment variable
              open a dos commad window (cmd.exe)
