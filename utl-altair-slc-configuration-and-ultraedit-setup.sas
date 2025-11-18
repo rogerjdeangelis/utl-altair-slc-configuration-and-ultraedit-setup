@@ -115,6 +115,36 @@ I SLC CONFIGUARATION WIN 11 64bit
 
 II  ULTRAEDIT CONFIGUARATION WIN 11 64bit
 
+    0 Add wps.exe to system path
+      edit the system environment variables
+      Locate wps.exe
+
+      May be at
+      C\Program Files\Altair\SLC\2025\bin
+
+      In the win 11 search box enter
+
+      advanced system properties
+      select enviorment variable in system properties
+      in system variables
+      highlisgt pathe
+      then new
+      and add
+      C\Program Files\Altair\SLC\2025\bin
+      ok and apply(if present)
+      ok again
+
+      Check path
+      refreshenv
+      open a cmd window
+      echo %PATH%
+
+      If this fails
+      open task manager (cntl-alt-delete)
+      restart windows explorer
+      open a NEW command window (cmd.exe)
+      echo %PATH%
+
     1 Download and install Ultraedit. I installed the free 7 day trial and later purchased a
       $99 yearly subscription.
       If you install the free 7 day trial you can later activate using just the license
