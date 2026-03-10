@@ -1,3 +1,5 @@
+# utl-altair-slc-configuration-and-ultraedit-setup
+Altair SLC configuration and UltraEdit setup
 %let pgm=utl-altair-slc-configuration-and-ultraedit-setup;
 
 %stop_submission
@@ -56,14 +58,14 @@ I SLC CONFIGUARATION WIN 11 64bit
          ALTAIRSLC_CONFIG      C:\wpscfg\altairslc_local.cfg
 
       e  refresh environment variable
-         open commad window
+         open command window
          enter
          refreshenv
          if refreshenv fails, open task manager cnt-alt-delete and restart windows explorer
          refreshenv worked in win 10, but failled after I instlled win 11?
 
-      f  check the environment variable
-         open a dos commad window (cmd.exe)
+      f  check the environment variable,
+         open a DOS command window (cmd.exe)
          enter
          echo %ALTAIRSLC_CONFIG%
 
@@ -74,11 +76,13 @@ I SLC CONFIGUARATION WIN 11 64bit
           current.log for froozen center panel in ultra edit
           current.lst for frozen right panel in ultra edit
 
-      b  c:/wpsoto    for autocall macros  (l%utlfkil() to delete files and autoexec.sas
+      b  c:/wpsoto    for autocall macros
 
       c  c:/wpscfg for config file
 
-      d  d:/wpswrk for work directory
+      d  d:/wpswrk for temporary work directory
+
+      e  d:/wpswrkx for permanent work directory
 
    3  Key files
 
@@ -96,54 +100,50 @@ I SLC CONFIGUARATION WIN 11 64bit
 
     4  Create c:/wpsoto/autoexec.sas
 
-       ;;;;  /*--- because of a bug in the how the slc handle the autoexec ---*/
-       run;quit;
 
-       %let _init_= %str(
        ods _all_ close;
        ods listing;
        options ls=255 ps=65
         nofmterr nocenter
         nodate nonumber
-        noquotelenmax
-        validvarname=upcase
+        noquotelenma
         compress=no
         FORMCHAR='|----|+|---+=|-/\<>*')
        ;
-       run;quit;
+       run;
+
+       libname workx "d:/wpswrkx"; /*--- save workspace for subsequent submissons ---*/
 
 
-II  ULTRAEDIT CONFIGUARATION WIN 11 64bit
+II  ULTRAEDIT CONFIGURATION WIN 11 64bit      edit the system environment variables
 
-    0 Add wps.exe to system path
-      edit the system environment variables
-      Locate wps.exe
+  0    Locate wps.exe
 
-      May be at
-      C\Program Files\Altair\SLC\2025\bin
+       May be at
+       C\Program Files\Altair\SLC\2025\bin
 
-      In the win 11 search box enter
+       In the win 11 search box enter
 
-      advanced system properties
-      select enviorment variable in system properties
-      in system variables
-      highlisgt pathe
-      then new
-      and add
-      C\Program Files\Altair\SLC\2025\bin
-      ok and apply(if present)
-      ok again
+       advanced system properties
+       select enviorment variable in system properties
+       in system variables
+       highlisgt path
+       then new
+       and add
+       C\Program Files\Altair\SLC\2025\bin
+       ok and apply(if present)
+       ok again
 
-      Check path
-      refreshenv
-      open a cmd window
-      echo %PATH%
+       Check path
+       refreshenv
+       open a cmd window
+       echo %PATH%
 
-      If this fails
-      open task manager (cntl-alt-delete)
-      restart windows explorer
-      open a NEW command window (cmd.exe)
-      echo %PATH%
+       If this fails
+       open task manager (cntl-alt-delete)
+       restart windows explorer
+       open a NEW command window (cmd.exe)
+       echo %PATH%
 
     1 Download and install Ultraedit. I installed the free 7 day trial and later purchased a
       $99 yearly subscription.
@@ -307,10 +307,288 @@ II  ULTRAEDIT CONFIGUARATION WIN 11 64bit
 
 III  SAMPLE SLC REPRODUCIBLE PROBLEMS
 
-Select slc from d:/git/git_010_repos.sasbdat
+ pgm=utl-altair-slc-configuration-and-ultraedit-setup;
 
-REPO
-----------------------------------------------------------------------------------------------------------------------------------------------
+p_submission
+
+book: Altair SLC configuration and UltraEdit setup
+
+long to post here, see github
+
+ub
+s://github.com/rogerjdeangelis/utl-altair-slc-configuration-and-ultraedit-setup
+
+IR CONFIGURATIONS
+& ULTRAEDIT
+
+ared by: Roger DeAngelis
+em: Windows 11 64-bit
+: November 2025
+
+E OF CONTENTS
+
+LC Configuration (Windows 11 64-bit)
+
+Create Environment Variable
+Create Folder Structures
+Key Files and Configuration Edits
+Create Autoexec File
+
+UltraEdit Configuration (Windows 11 64-bit)
+
+Installation and Licensing
+Preparing Required Files
+Setting Up Run Command
+Multi-Panel Tiling Layout
+Automatic File Refresh
+Layout and Workspace Management
+Keyboard Shortcuts
+Running Programs
+
+ Sample Reproducible Problems
+
+
+C CONFIGUARATION WIN 11 64bit
+
+Create environment variable
+
+  a. In the win 11 search box type
+     type 'environment variables'
+
+  b  select 'edit environment variables'
+
+  c  user variables > select edit add
+
+  d  enter this  in variable anf value fields
+     VARIABLE              VALUE
+
+     ALTAIRSLC_CONFIG      C:\wpscfg\altairslc_local.cfg
+
+  e  refresh environment variable
+     open commad window
+     enter
+     refreshenv
+
+  f  check the environment variable
+     open a dos commad window (cmd.exe)
+     enter
+     echo %ALTAIRSLC_CONFIG%
+
+ Create folder structures
+
+  a  c:/slc/
+      current.sas for frozen left panel in ultraedit
+      current.log for froozen center panel in ultra edit
+      current.lst for frozen right panel in ultra edit
+
+  b  c:/wpsoto    for autocall macros  (l%utlfkil() to delete files and autoexec.sas
+
+  c  c:/wpscfg for config file
+
+  d  d:/wpswrk for work directory
+
+  Key files
+
+  a  COPY C:\Program Files\Altair\SLC\2026\altairslc.cfg
+     To
+     C:\wpscfg\altairslc_local.cfg
+
+  b  Edt C:\wpscfg\altairslc_local.cfg user config file given by the environment variable ALTAIRSLC_CONFIG
+
+    -WORK 'd:\wpswrk'
+    -set SASAUTOS ('!wpshome\sasmacro' 'c:/wpsoto')
+    -SASAUTOS (SASAUTOS)
+    -AUTOEXEC 'c:/wpsoto/autoexec.sas'
+    -SASUSER 'd:/wpsusr'
+
+4  Create c:/wpsoto/autoexec.sas
+
+   ;;;;  /*--- because of a bug in the how the slc handle the autoexec ---*/
+   run;quit;
+
+   %let _init_= %str(
+   ods _all_ close;
+   ods listing;
+   options ls=255 ps=65
+    nofmterr nocenter
+    nodate nonumber
+    noquotelenmax
+    validvarname=upcase
+    compress=no
+    FORMCHAR='|----|+|---+=|-/\<>*')
+   ;
+   run;quit;
+
+
+ULTRAEDIT CONFIGUARATION WIN 11 64bit
+
+1 Download and install Ultraedit. I installed the free 7 day trial and later purchased a
+  $99 yearly subscription.
+  If you install the free 7 day trial you can later activate using just the license
+  key in the verification email.
+  https://www.ultraedit.com/catalog-product/ultraedit-sub/
+
+2 You should already have these files from above. It is ok if they are empty.
+
+  c:/slc/current.sas
+  c:/slc/currentlog
+  c:/slc/current.lst
+
+3 Open ultraedit
+
+  Click on advanced tab in upper right
+
+  Click on this box
+
+  +---------+
+  | Run     |
+  | WINDOWS |
+  | PROGRAM |
+  +---------+
+
+  Click on menu item
+
+  Run Wimdows command
+
+  In the command box type
+
+  cmd /c start /B wps %f -log "%p%n.log" -print "%p%n.lst"
+
+  In the working directory box
+  Type
+
+  c:/slc
+
+  I chose handle Outputs as ANSI
+
+ In upper left click on File
+
+  Click on open
+
+  go to c:/slc
+
+  Hold down the control key and
+  select
+
+  current.sas
+  currentlog
+  current.lst
+
+  or select one at a time
+
+u should see
+
+ +--------------------+-------------------+--------------------+
+ | c:\slc\current.sas | c:\slc\currentlog | c:\slc\current.lst |
+ +--------------------+-------------------+--------------------+
+
+ Click on Window ( it is next to Advanced in upper right )
+
+ Click on enable Tiling (very important)
+
+ Click on Cascade & Tile
+
+ Click on Tile Vertical
+
+ You should see
+
+ /**********************************************************************************/
+ /*    C:\slc\current.lst     |     c:\slc\current.sas    |    c:\slc\current.log  */
+ /*                           |                           |                        */
+ /*                           |                           |                        */
+ /*                           |                           |                        */
+ /*                           |                           |                        */
+ /*                           |                           |                        */
+ /*                           |                           |                        */
+ /*                           |                           |                        */
+ /*                           |                           |                        */
+ /*                           |                           |                        */
+ /*                           |                           |                        */
+ /*                           |                           |                        */
+ /*                           |                           |                        */
+ /*                           |                           |                        */
+ /*                           |                           |                        */
+ /**********************************************************************************/
+
+ You can easily rearrange the panels, just drag and drop
+
+ Set automatic refresing of log and list
+
+ click on advanced in upper right
+
+ click on the gear settings (not backup settings)
+
+ scroll down to file handling > file change detection > automatic update file changes
+
+ save layout and workspace (only need to do this once or when you change lyaouts or workspace)
+
+ click on layout (again)
+
+ click on
+
+  +---------+
+  | LAYOUTS |
+  +---------+
+
+ click on
+
+  manage layouts
+
+click on first item
+
+ Balanced Save [22.04.25]
+
+ A box will pop up
+
+ In the name box give a name for your layout (mylayout)
+
+ click on save
+
+ Next time you open UE you will have mylayout.
+ You can have mutiple layouts
+
+ Save your workspces and layouts
+
+ Go to Advanced > backup settings >selct a directory to save and click on backup
+
+ Close UE
+ in the very top task bar click on yellow circle with ue text and close
+
+ When you open UE you should see
+
+
+To eliminate mouse actions and run your program using two key mappings
+
+  Go to advanced > setings > key mapping
+
+  Look for 'run window program'
+  shoupld see
+  'existing key' (should be empty)
+
+  type this in existing key box
+
+  Hold down the alt key and add the '1'
+  The result should look like 'alt + 1'
+
+  close settings
+
+ How to run your program
+
+ You need a two key mapping
+
+ Hold alt key down and hit 1
+ when run box opend
+ Hold down alt key and hit R
+
+
+
+ SAMPLE SLC REPRODUCIBLE PROBLEMS
+
+
+ct slc from d:/git/git_010_repos.sasbdat
+
+S
+
 https://github.com/rogerjdeangelis/-utl-monarch-and-altair-personal-slc-creating-and-converting-pdf-tables-to-text
 https://github.com/rogerjdeangelis/setup-personal-edition-altair-slc-eclipse-workspace-config-sasautos-sasuser-saswork-autoexec
 https://github.com/rogerjdeangelis/utl-RE-Altair-Personal-slc-Monarch-Learning-Series_2023-Exercise_6-Sales---Inventory-Analysis
