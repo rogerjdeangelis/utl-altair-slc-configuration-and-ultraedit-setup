@@ -58,14 +58,14 @@ Altair SLC configuration and UltraEdit setup
              ALTAIRSLC_CONFIG      C:\wpscfg\altairslc_local.cfg
 
           e  refresh environment variable
-             open commad window
+             open command window
              enter
              refreshenv
              if refreshenv fails, open task manager cnt-alt-delete and restart windows explorer
              refreshenv worked in win 10, but failled after I instlled win 11?
 
-          f  check the environment variable
-             open a dos commad window (cmd.exe)
+          f  check the environment variable,
+             open a DOS command window (cmd.exe)
              enter
              echo %ALTAIRSLC_CONFIG%
 
@@ -76,11 +76,13 @@ Altair SLC configuration and UltraEdit setup
               current.log for froozen center panel in ultra edit
               current.lst for frozen right panel in ultra edit
 
-          b  c:/wpsoto    for autocall macros  (l%utlfkil() to delete files and autoexec.sas
+          b  c:/wpsoto    for autocall macros   
 
           c  c:/wpscfg for config file
 
-          d  d:/wpswrk for work directory
+          d  d:/wpswrk for temporary work directory
+
+          e  d:/wpswrkx for permanent work directory
 
        3  Key files
 
@@ -98,24 +100,22 @@ Altair SLC configuration and UltraEdit setup
 
         4  Create c:/wpsoto/autoexec.sas
 
-           ;;;;  /*--- because of a bug in the how the slc handle the autoexec ---*/
-           run;quit;
-
-           %let _init_= %str(
+            
            ods _all_ close;
            ods listing;
            options ls=255 ps=65
             nofmterr nocenter
             nodate nonumber
-            noquotelenmax
-            validvarname=upcase
+            noquotelenma
             compress=no
             FORMCHAR='|----|+|---+=|-/\<>*')
            ;
-           run;quit;
+           run;
+
+           libname workx "d:/wpswrkx"; /*--- save workspace for subsequent submissons ---*/
 
 
-    II  ULTRAEDIT CONFIGUARATION WIN 11 64bit      edit the system environment variables
+    II  ULTRAEDIT CONFIGURATION WIN 11 64bit      edit the system environment variables
     
       0    Locate wps.exe
 
@@ -127,7 +127,7 @@ Altair SLC configuration and UltraEdit setup
            advanced system properties
            select enviorment variable in system properties
            in system variables
-           highlisgt pathe
+           highlisgt path
            then new
            and add
            C\Program Files\Altair\SLC\2025\bin
