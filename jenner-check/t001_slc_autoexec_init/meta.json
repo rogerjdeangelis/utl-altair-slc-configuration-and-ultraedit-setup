@@ -1,0 +1,7 @@
+{
+  "bundle": "t001_slc_autoexec_init",
+  "source_file": "utl-altair-slc-configuration-and-ultraedit-setup.sas",
+  "source_blob_sha": "b4eac92eccece625dd203a911813e9d7eb8eb54e",
+  "source_commit": "28713989cb7cabe36be8d8795eda3523a764402f",
+  "notes": "Extracted the autoexec _init_ session options block documented in Section I.4 (ods listing; options ls/ps, validvarname=upcase, compress=no, custom FORMCHAR). Added a small self-contained demonstration on sashelp.class so the configured VALIDVARNAME=UPCASE (upper-cased column headers) and custom FORMCHAR (table rules) are visible in the listing. No external data or paths required."
+}
