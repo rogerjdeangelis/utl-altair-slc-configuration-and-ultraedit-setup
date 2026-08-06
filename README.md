@@ -1,303 +1,305 @@
-    Altair SLC configuration and UltraEdit setup
-    %let pgm=utl-altair-slc-configuration-and-ultraedit-setup;
+     Altair SLC configuration and UltraEdit setup
+     %let pgm=utl-altair-slc-configuration-and-ultraedit-setup;
 
-    %stop_submission
+     %stop_submission
 
-    Altair SLC configuration and UltraEdit setup
+     Altair SLC configuration and UltraEdit setup
 
-    Too long to post here, see github
+     Too long to post here, see github
 
-    github
-    https://github.com/rogerjdeangelis/utl-altair-slc-configuration-and-ultraedit-setup
+     github
+     https://github.com/rogerjdeangelis/utl-altair-slc-configuration-and-ultraedit-setup
 
-    ALTAIR CONFIGURATIONS
-    SLC & ULTRAEDIT
+     ALTAIR CONFIGURATIONS
+     SLC & ULTRAEDIT
 
-    Prepared by: Roger DeAngelis
-    System: Windows 11 64-bit
-    Date: November 2025
+     Prepared by: Roger DeAngelis
+     System: Windows 11 64-bit
+     Date: November 2025
 
-    TABLE OF CONTENTS
+     TABLE OF CONTENTS
 
-    I. SLC Configuration (Windows 11 64-bit)
+     I. SLC Configuration (Windows 11 64-bit)
 
-     1. Create Environment Variable
-     2. Create Folder Structures
-     3. Key Files and Configuration Edits
-     4. Create Autoexec File
+      1. Create Environment Variable
+      2. Create Folder Structures
+      3. Key Files and Configuration Edits
+      4. Create Autoexec File
 
-    II. UltraEdit Configuration (Windows 11 64-bit)
+     II. UltraEdit Configuration (Windows 11 64-bit)
 
-     1. Installation and Licensing
-     2. Preparing Required Files
-     3. Setting Up Run Command
-     4. Multi-Panel Tiling Layout
-     5. Automatic File Refresh
-     6. Layout and Workspace Management
-     7. Keyboard Shortcuts
-     8. Running Programs
+      1. Installation and Licensing
+      2. Preparing Required Files
+      3. Setting Up Run Command
+      4. Multi-Panel Tiling Layout
+      5. Automatic File Refresh
+      6. Layout and Workspace Management
+      7. Keyboard Shortcuts
+      8. Running Programs
 
-    III. Sample Reproducible Problems
+     III. Sample Reproducible Problems
 
 
-    I SLC CONFIGUARATION WIN 11 64bit
+     I SLC CONFIGUARATION WIN 11 64bit
 
-      1 Create environment variable
+       1 Create environment variable
 
-          a. In the win 11 search box type
-             type 'environment variables'
+           a. In the win 11 search box type
+              type 'environment variables'
 
-          b  select 'edit environment variables'
+           b  select 'edit environment variables'
 
-          c  user variables > select edit add
+           c  user variables > select edit add
 
-          d  enter this  in variable anf value fields
-             VARIABLE              VALUE
+           d  enter this  in variable anf value fields
+              VARIABLE              VALUE
 
-             ALTAIRSLC_CONFIG      C:\wpscfg\altairslc_local.cfg
+              ALTAIRSLC_CONFIG      C:\wpscfg\altairslc_local.cfg
 
-          e  refresh environment variable
-             open command window
-             enter
-             refreshenv
-             if refreshenv fails, open task manager cnt-alt-delete and restart windows explorer
-             refreshenv worked in win 10, but failled after I instlled win 11?
+           e  refresh environment variable
+              open command window
+              enter
+              refreshenv
+              if refreshenv fails, open task manager cnt-alt-delete and restart windows explorer
+              refreshenv worked in win 10, but failled after I instlled win 11?
 
-          f  check the environment variable,
-             open a DOS command window (cmd.exe)
-             enter
-             echo %ALTAIRSLC_CONFIG%
+           f  check the environment variable,
+              open a DOS command window (cmd.exe)
+              enter
+              echo %ALTAIRSLC_CONFIG%
 
-       2 Create folder structures
+        2 Create folder structures
 
-          a  c:/slc/
-              current.sas for frozen left panel in ultraedit
-              current.log for froozen center panel in ultra edit
-              current.lst for frozen right panel in ultra edit
+           a  c:/slc/
+               current.sas for frozen left panel in ultraedit
+               current.log for froozen center panel in ultra edit
+               current.lst for frozen right panel in ultra edit
 
-          b  c:/wpsoto    for autocall macros
+           b  c:/wpsoto    for autocall macros
 
-          c  c:/wpscfg for config file
+           c  c:/wpscfg for config file
 
-          d  d:/wpswrk for temporary work directory
+           d  d:/wpswrk for temporary work directory
 
-          e  d:/wpswrkx for permanent work directory
+           e  d:/wpswrkx for permanent work directory
 
-       3  Key files
+        3  Key files
 
-          a  COPY C:\Program Files\Altair\SLC\2026\altairslc.cfg
-             To
-             C:\wpscfg\altairslc_local.cfg
+           a  COPY C:\Program Files\Altair\SLC\2026\altairslc.cfg
+              To
+              C:\wpscfg\altairslc_local.cfg
 
-          b  Edt C:\wpscfg\altairslc_local.cfg user config file given by the environment variable ALTAIRSLC_CONFIG
+           b  Edt C:\wpscfg\altairslc_local.cfg user config file given by the environment variable ALTAIRSLC_CONFIG
 
-            -WORK 'd:\wpswrk'
-            -set SASAUTOS ('!wpshome\sasmacro' 'c:/wpsoto')
-            -SASAUTOS (SASAUTOS)
-            -AUTOEXEC 'c:/wpsoto/autoexec.sas'
-            -SASUSER 'd:/wpsusr'
+             -WORK 'd:\wpswrk'
+             -set SASAUTOS ('!wpshome\sasmacro' 'c:/wpsoto')
+             -SASAUTOS (SASAUTOS)
+             -AUTOEXEC 'c:/wpsoto/autoexec.sas'
+             -SASUSER 'd:/wpsusr'
 
-        4  Create c:/wpsoto/autoexec.sas
+         4  Create c:/wpsoto/autoexec.sas
 
 
-           ods _all_ close;
-           ods listing;
-           options ls=255 ps=65
-            nofmterr nocenter
-            nodate nonumber
-            noquotelenma
-            compress=no
-            FORMCHAR='|----|+|---+=|-/\<>*')
-           ;
-           run;
+            ods _all_ close;
+            ods listing;
+            options ls=255 ps=65
+             nofmterr nocenter
+             nodate nonumber
+             noquotelenma
+             compress=no
+             FORMCHAR='|----|+|---+=|-/\<>*')
+            ;
+            run;
 
-           libname workx "d:/wpswrkx"; /*--- save workspace for subsequent submissons ---*/
+            libname workx "d:/wpswrkx"; /*--- save workspace for subsequent submissons ---*/
 
 
-    II  ULTRAEDIT CONFIGURATION WIN 11 64bit      edit the system environment variables
+     II  ULTRAEDIT CONFIGURATION WIN 11 64bit      edit the system environment variables
 
-      0    Locate wps.exe
+       0    Locate wps.exe
 
-           May be at
-           C\Program Files\Altair\SLC\2025\bin
+            May be at
+            C\Program Files\Altair\SLC\2025\bin
 
-           In the win 11 search box enter
+            In the win 11 search box enter
 
-           advanced system properties
-           select enviorment variable in system properties
-           in system variables
-           highlisgt path
-           then new
-           and add
-           C\Program Files\Altair\SLC\2025\bin
-           ok and apply(if present)
-           ok again
+            advanced system properties
+            select enviorment variable in system properties
+            in system variables
+            highlisgt path
+            then new
+            and add
+            C\Program Files\Altair\SLC\2025\bin
+            ok and apply(if present)
+            ok again
 
-           Check path
-           refreshenv
-           open a cmd window
-           echo %PATH%
+            Check path
+            refreshenv
+            open a cmd window
+            echo %PATH%
 
-           If this fails
-           open task manager (cntl-alt-delete)
-           restart windows explorer
-           open a NEW command window (cmd.exe)
-           echo %PATH%
+            If this fails
+            open task manager (cntl-alt-delete)
+            restart windows explorer
+            open a NEW command window (cmd.exe)
+            echo %PATH%
 
-        1 Download and install Ultraedit. I installed the free 7 day trial and later purchased a
-          $99 yearly subscription.
-          If you install the free 7 day trial you can later activate using just the license
-          key in the verification email.
-          https://www.ultraedit.com/catalog-product/ultraedit-sub/
+         1 Download and install Ultraedit. I installed the free 7 day trial and later purchased a
+           $99 yearly subscription.
+           If you install the free 7 day trial you can later activate using just the license
+           key in the verification email.
+           https://www.ultraedit.com/catalog-product/ultraedit-sub/
 
-        2 You should already have these files from above. It is ok if they are empty.
+         2 You should already have these files from above. It is ok if they are empty.
 
-          c:/slc/current.sas
-          c:/slc/currentlog
-          c:/slc/current.lst
+           c:/slc/current.sas
+           c:/slc/currentlog
+           c:/slc/current.lst
 
-        2.5 Better way to run program (only alt-f1)
-          Single action to run your Jenner Alalytics or Altair SLC programs
+         2.5 Better way to run program (only alt-f1)
+           Single action to run your Jenner Alalytics or Altair SLC programs
 
-          How to press 'alt-f1' multikey to run you jenner analytics programu(or sas or altair slc)
+           How to press 'alt-f1' multikey to run you jenner analytics programu(or sas or altair slc)
 
-          Go to advanced > tool configuration. It is the 'hammer icon' and select configuration.
-          Fill in
+           Go to advanced > tool configuration. It is the 'hammer icon' and select configuration.
+           Fill in
 
-          Menu Item Name::
-          jnr
+           Menu Item Name::
+           jnr
 
-          Command Line: (you can add other options)
-          cmd /c start /B C:\Progra~1\Jenner\jenner.exe %f -log "%p%n.log" -print "%p%n.lst" -work "d:/wpswrk"
+           Command Line: (you can add other options)
+           cmd /c start /B C:\Progra~1\Jenner\jenner.exe %f -log "%p%n.log" -print "%p%n.lst" -work "d:/wpswrk"
 
-          Working directory:
-          c:/slc
+           Working directory:
+           c:/slc
 
-          apply then ok
+           apply then ok
 
-          This is what I could not figure out earlier.
+           This is what I could not figure out earlier.
 
-          Menu Item Name 'jnr' is mapped to 'User Tool 1' in advanced > settings (the gear icon).
-          Go to advanced > settings (the gear icon)  > toolbar/menu > key mappings
-          Select 'User tool 1'
-          Existing Keys: (press alt-1)
-          alt-f1
+           Menu Item Name 'jnr' is mapped to 'User Tool 1' in advanced > settings (the gear icon).
+           Go to advanced > settings (the gear icon)  > toolbar/menu > key mappings
+           Select 'User tool 1'
+           Existing Keys: (press alt-1)
+           alt-f1
 
-        3 Open ultraedit (deprecated use 2.5 run program using alt-f1 abd alt-r)
+         3 Open ultraedit (deprecated use 2.5 run program using alt-f1 abd alt-r)
 
-          Click on advanced tab in upper right
+           Click on advanced tab in upper right
 
-          Click on this box
+           Click on this box
 
-          +---------+
-          | Run     |
-          | WINDOWS |
-          | PROGRAM |
-          +---------+
+           +---------+
+           | Run     |
+           | WINDOWS |
+           | PROGRAM |
+           +---------+
 
-          Click on menu item
+           Click on menu item
 
-          Run Windows command
+           Run Windows command
 
-          In the command box type
+           In the command box type
 
-          cmd /c start /B wps %f -log "%p%n.log" -print "%p%n.lst"
+           cmd /c start /B wps %f -log "%p%n.log" -print "%p%n.lst"
 
-          In the working directory box
-          Type
+           In the working directory box
+           Type
 
-          c:/slc
+           c:/slc
 
-          I chose handle Outputs as ANSI
+           I chose handle Outputs as ANSI
 
-          To eliminate mouse actions and run your program using two key mappings
+           To eliminate mouse actions and run your program using two key mappings
 
-          Go to advanced > setings > key mapping
+           Go to advanced > setings > key mapping
 
-          Look for 'run window program'
-          shoupld see
-          'existing key' (should be empty)
+           Look for 'run window program'
+           shoupld see
+           'existing key' (should be empty)
 
-          type this in existing key box
+           type this in existing key box
 
-          Hold down the alt key and add the '1'
-          The result should look like 'alt + 1'
+           Hold down the alt key and add the '1'
+           The result should look like 'alt + 1'
 
-          close settings
+           close settings
 
-          alt-f1 abd alt-r  will run your program
+           alt-f1 abd alt-r  will run your program
 
 
-    5 You should see
+     5 You should see
 
-         +--------------------+-------------------+--------------------+
-         | c:\slc\current.sas | c:\slc\currentlog | c:\slc\current.lst |
-         +--------------------+-------------------+--------------------+
+          +--------------------+-------------------+--------------------+
+          | c:\slc\current.sas | c:\slc\currentlog | c:\slc\current.lst |
+          +--------------------+-------------------+--------------------+
 
-    6    Click on Window ( it is next to Advanced in upper right )
+     6    Click on Window ( it is next to Advanced in upper right )
 
-         Click on enable Tiling (very important)
+          Click on enable Tiling (very important)
 
-         Click on Cascade & Tile
+          Click on Cascade & Tile
 
-         Click on Tile Vertical
+          Click on Tile Vertical
 
-    7    You should see
+     7    You should see
 
-         /**********************************************************************************/
-         /*    C:\slc\current.lst     |     c:\slc\current.sas    |    c:\slc\current.log  */
-         /*                           |                           |                        */
-         /*                           |                           |                        */
-         /*                           |                           |                        */
-         /*                           |                           |                        */
-         /*                           |                           |                        */
-         /*                           |                           |                        */
-         /*                           |                           |                        */
-         /*                           |                           |                        */
-         /*                           |                           |                        */
-         /*                           |                           |                        */
-         /*                           |                           |                        */
-         /*                           |                           |                        */
-         /*                           |                           |                        */
-         /*                           |                           |                        */
-         /**********************************************************************************/
+          /**********************************************************************************/
+          /*    C:\slc\current.lst     |     c:\slc\current.sas    |    c:\slc\current.log  */
+          /*                           |                           |                        */
+          /*                           |                           |                        */
+          /*                           |                           |                        */
+          /*                           |                           |                        */
+          /*                           |                           |                        */
+          /*                           |                           |                        */
+          /*                           |                           |                        */
+          /*                           |                           |                        */
+          /*                           |                           |                        */
+          /*                           |                           |                        */
+          /*                           |                           |                        */
+          /*                           |                           |                        */
+          /*                           |                           |                        */
+          /*                           |                           |                        */
+          /**********************************************************************************/
 
-    8    You can easily rearrange the panels, just drag and drop
+     8    You can easily rearrange the panels, just drag and drop
 
-    9    Set automatic refresing of log and list
+     9    Set automatic refresing of log and list
 
-         click on advanced in upper right
+          click on advanced in upper right
 
-         click on the gear settings (not backup settings)
+          click on the gear settings (not backup settings)
 
-         scroll down to file handling > file change detection > automatic update file changes
+          scroll down to file handling > file change detection > automatic update file changes
 
-    10   save layout and workspace (only need to do this once or when you change lyaouts or workspace)
+     10   save layout and workspace (only need to do this once or when you change lyaouts or workspace)
 
-         click on layout (again)
+          click on layout (again)
 
-         click on
+          click on
 
-          +---------+
-          | LAYOUTS |
-          +---------+
+           +---------+
+           | LAYOUTS |
+           +---------+
 
-         click on
+          click on
 
-         manage layouts
+          manage layouts
 
-         click on first item
+          click on first item
 
-         Balanced Save [22.04.25]
+          Balanced Save [22.04.25]
 
-         A box will pop up
+          A box will pop up
 
-         In the name box give a name for your layout (mylayout)
+          In the name box give a name for your layout (mylayout)
 
-         click on save
+          click on save
 
-         Next time you open UE you will have mylayout.
-         You can have mutiple layouts
+          Next time you open UE you will have mylayout.
+          You can have mutiple layouts
+
+
 
 
 
