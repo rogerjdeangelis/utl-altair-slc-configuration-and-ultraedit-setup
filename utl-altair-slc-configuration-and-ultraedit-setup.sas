@@ -156,8 +156,34 @@ II  ULTRAEDIT CONFIGURATION WIN 11 64bit      edit the system environment variab
       c:/slc/current.sas
       c:/slc/currentlog
       c:/slc/current.lst
+      
+    2.5 Better way to run program (only alt-f1)
+      Single action to run your Jenner Alalytics or Altair SLC programs
 
-    3 Open ultraedit
+      How to press 'alt-f1' multikey to run you jenner analytics programu(or sas or altair slc)
+
+      Go to advanced > tool configuration. It is the 'hammer icon' and select configuration.
+      Fill in
+
+      Menu Item Name::
+      jnr
+
+      Command Line: (you can add other options)
+      cmd /c start /B C:\Progra~1\Jenner\jenner.exe %f -log "%p%n.log" -print "%p%n.lst" -work "d:/wpswrk"
+
+      Working directory:
+      c:/slc
+
+      apply then ok
+
+      This is what I could not figure out earlier.
+
+      Menu Item Name 'jnr' is mapped to 'User Tool 1' in advanced > settings (the gear icon).
+      Go to advanced > settings (the gear icon)  > toolbar/menu > key mappings
+      Select 'User tool 1'
+      Existing Keys: (press alt-1)
+      alt-f1    
+    3 Open ultraedit (run program using alt-f1 abd alt-r)
 
       Click on advanced tab in upper right
 
@@ -171,7 +197,7 @@ II  ULTRAEDIT CONFIGURATION WIN 11 64bit      edit the system environment variab
 
       Click on menu item
 
-      Run Wimdows command
+      Run Windows command
 
       In the command box type
 
