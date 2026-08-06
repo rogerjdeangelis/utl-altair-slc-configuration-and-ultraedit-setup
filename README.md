@@ -1,5 +1,4 @@
-# utl-altair-slc-configuration-and-ultraedit-setup
-Altair SLC configuration and UltraEdit setup
+    Altair SLC configuration and UltraEdit setup
     %let pgm=utl-altair-slc-configuration-and-ultraedit-setup;
 
     %stop_submission
@@ -76,7 +75,7 @@ Altair SLC configuration and UltraEdit setup
               current.log for froozen center panel in ultra edit
               current.lst for frozen right panel in ultra edit
 
-          b  c:/wpsoto    for autocall macros   
+          b  c:/wpsoto    for autocall macros
 
           c  c:/wpscfg for config file
 
@@ -100,7 +99,7 @@ Altair SLC configuration and UltraEdit setup
 
         4  Create c:/wpsoto/autoexec.sas
 
-            
+
            ods _all_ close;
            ods listing;
            options ls=255 ps=65
@@ -116,7 +115,7 @@ Altair SLC configuration and UltraEdit setup
 
 
     II  ULTRAEDIT CONFIGURATION WIN 11 64bit      edit the system environment variables
-    
+
       0    Locate wps.exe
 
            May be at
@@ -143,7 +142,7 @@ Altair SLC configuration and UltraEdit setup
            open task manager (cntl-alt-delete)
            restart windows explorer
            open a NEW command window (cmd.exe)
-           echo %PATH%    
+           echo %PATH%
 
         1 Download and install Ultraedit. I installed the free 7 day trial and later purchased a
           $99 yearly subscription.
@@ -157,7 +156,34 @@ Altair SLC configuration and UltraEdit setup
           c:/slc/currentlog
           c:/slc/current.lst
 
-        3 Open ultraedit
+        2.5 Better way to run program (only alt-f1)
+          Single action to run your Jenner Alalytics or Altair SLC programs
+
+          How to press 'alt-f1' multikey to run you jenner analytics programu(or sas or altair slc)
+
+          Go to advanced > tool configuration. It is the 'hammer icon' and select configuration.
+          Fill in
+
+          Menu Item Name::
+          jnr
+
+          Command Line: (you can add other options)
+          cmd /c start /B C:\Progra~1\Jenner\jenner.exe %f -log "%p%n.log" -print "%p%n.lst" -work "d:/wpswrk"
+
+          Working directory:
+          c:/slc
+
+          apply then ok
+
+          This is what I could not figure out earlier.
+
+          Menu Item Name 'jnr' is mapped to 'User Tool 1' in advanced > settings (the gear icon).
+          Go to advanced > settings (the gear icon)  > toolbar/menu > key mappings
+          Select 'User tool 1'
+          Existing Keys: (press alt-1)
+          alt-f1
+
+        3 Open ultraedit (deprecated use 2.5 run program using alt-f1 abd alt-r)
 
           Click on advanced tab in upper right
 
@@ -171,7 +197,7 @@ Altair SLC configuration and UltraEdit setup
 
           Click on menu item
 
-          Run Wimdows command
+          Run Windows command
 
           In the command box type
 
@@ -184,20 +210,23 @@ Altair SLC configuration and UltraEdit setup
 
           I chose handle Outputs as ANSI
 
-       4 In upper left click on File
+          To eliminate mouse actions and run your program using two key mappings
 
-          Click on open
+          Go to advanced > setings > key mapping
 
-          go to c:/slc
+          Look for 'run window program'
+          shoupld see
+          'existing key' (should be empty)
 
-          Hold down the control key and
-          select
+          type this in existing key box
 
-          current.sas
-          currentlog
-          current.lst
+          Hold down the alt key and add the '1'
+          The result should look like 'alt + 1'
 
-          or select one at a time
+          close settings
+
+          alt-f1 abd alt-r  will run your program
+
 
     5 You should see
 
@@ -255,9 +284,9 @@ Altair SLC configuration and UltraEdit setup
 
          click on
 
-          manage layouts
+         manage layouts
 
-        click on first item
+         click on first item
 
          Balanced Save [22.04.25]
 
@@ -270,37 +299,6 @@ Altair SLC configuration and UltraEdit setup
          Next time you open UE you will have mylayout.
          You can have mutiple layouts
 
-    9    Save your workspces and layouts
 
-         Go to Advanced > backup settings >selct a directory to save and click on backup
-
-    10   Close UE
-         in the very top task bar click on yellow circle with ue text and close
-
-    11   When you open UE you should see
-
-
-    9   To eliminate mouse actions and run your program using two key mappings
-
-          Go to advanced > setings > key mapping
-
-          Look for 'run window program'
-          shoupld see
-          'existing key' (should be empty)
-
-          type this in existing key box
-
-          Hold down the alt key and add the '1'
-          The result should look like 'alt + 1'
-
-          close settings
-
-    10   How to run your program
-
-         You need a two key mapping
-
-         Hold alt key down and hit 1
-         when run box opend
-         Hold down alt key and hit R
 
 
