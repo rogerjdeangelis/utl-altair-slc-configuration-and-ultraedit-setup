@@ -35,7 +35,7 @@
     III. Sample Reproducible Problems
 
 
-    I SLC CONFIGUARATION WIN 11 64bit
+      SLC CONFIGUARATION WIN 11 64bit
 
       1 Create environment variable
 
@@ -109,7 +109,7 @@
            libname workx "d:/wpswrkx"; /*--- save workspace for subsequent submissons ---*/
 
 
-    II  ULTRAEDIT CONFIGURATION WIN 11 64bit      edit the system environment variables
+    IV  ULTRAEDIT CONFIGURATION WIN 11 64bit      edit the system environment variables
 
       0    Locate wps.exe
 
@@ -348,8 +348,32 @@
           Hold alt key down and hit 1
           when run box opend
           Hold down alt key and hit R
+          
+V Versioning in UltrEdit
+   UltraEdit has a built-in Version Backup feature that can keep a numbered copy each time you save. 
+   It is convenient for local, single-file history; use Git if you need commits, diffs, branches, and shared history.
 
+   Enable version backups
+   1 Open Advanced → Configuration (in newer layouts this may be Advanced → Settings).
 
+   2 Go to File Handling → Backup.
+
+   3 Under Version backup, enable On save.
+
+   4 Set a filename format that includes $c, the sequential version counter.
+
+   5 Set Maximum number of backups—use -1 for no limit.    
+
+ You should see in the current working directort
+
+c:/slc
+
+  program.sas
+  program(0).sas
+  
+  In you versionin directory you should
+  
+  program.sasbak (this will be overriden?) 
  
      
  
