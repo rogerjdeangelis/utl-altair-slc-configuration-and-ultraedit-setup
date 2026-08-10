@@ -364,16 +364,16 @@
 
     5 Set Maximum number of backups—use -1 for no limit.    
 
-   You should see in the current working directort
+    You should see in the current working directort
 
-   c:/slc
+    c:/slc
 
-   program.sas
-   program(0).sas
+    program.sas
+    program(0).sas
   
-  In you versionin directory you should
+    In you versionin directory you should
   
-  program.sasbak (this will be overriden?) 
+    program.sasbak (this will be overriden?) 
  
      
  
