@@ -362,9 +362,11 @@
 
      4 Set a filename format that includes $c, the sequential version counter.
 
-     5 Set Maximum number of backups—use -1 for no limit.    
+     5 Set Maximum number of backups—use -1 for no limit.  
 
-     You should see in the current working directort
+     You should see in the current working directory
+
+     type hotkey ctrl-s and you should see
 
      c:/slc
 
