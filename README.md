@@ -33,7 +33,7 @@
     III. Sample Reproducible Problems
 
 
-      SLC CONFIGUARATION WIN 11 64bit
+      CONFIGUARATION WIN 11 64bit
 
       1 Create environment variable
 
