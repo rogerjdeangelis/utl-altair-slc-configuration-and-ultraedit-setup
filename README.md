@@ -4,7 +4,7 @@
     https://github.com/rogerjdeangelis/utl-chapter-I-configuration-and-ultraedit-setup-for-sas-compatible-systems
 
     CONFIGURATIONS
-    SLC & ULTRAEDIT
+    ULTRAEDIT
 
     Prepared by: Roger DeAngelis
     System: Windows 11 64-bit
@@ -12,7 +12,7 @@
 
     TABLE OF CONTENTS
 
-    I. SLC Configuration (Windows 11 64-bit)
+    I. Configuration (Windows 11 64-bit)
 
      1. Create Environment Variable
      2. Create Folder Structures
