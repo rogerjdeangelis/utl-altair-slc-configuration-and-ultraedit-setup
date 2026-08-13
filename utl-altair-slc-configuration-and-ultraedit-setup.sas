@@ -1,12 +1,12 @@
-    Altair SLC configuration and UltraEdit setup
+    Configuration and UltraEdit setup
      
     Too long to post here, see github
 
     Too long to post, see github
-    https://github.com/rogerjdeangelis/utl-chapter-I-altair-slc-configuration-and-ultraedit-setup
-
-    ALTAIR CONFIGURATIONS
-    SLC & ULTRAEDIT
+    https://github.com/rogerjdeangelis/utl-chapter-I-configuration-and-ultraedit-setup-for-sas-compatible-systems
+    
+    CONFIGURATIONS
+    ULTRAEDIT
 
     Prepared by: Roger DeAngelis
     System: Windows 11 64-bit
