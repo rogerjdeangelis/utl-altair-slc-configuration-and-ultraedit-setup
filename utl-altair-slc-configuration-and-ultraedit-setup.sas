@@ -2,8 +2,8 @@
      
     Too long to post here, see github
 
-    github
-    https://github.com/rogerjdeangelis/utl-altair-slc-configuration-and-ultraedit-setup
+    Too long to post, see github
+    https://github.com/rogerjdeangelis/utl-chapter-I-altair-slc-configuration-and-ultraedit-setup
 
     ALTAIR CONFIGURATIONS
     SLC & ULTRAEDIT
