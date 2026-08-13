@@ -1,9 +1,9 @@
-    Altair SLC configuration and UltraEdit setup
+    Configuration and UltraEdit setup
      
     Too long to post, see github
     https://github.com/rogerjdeangelis/utl-chapter-I-configuration-and-ultraedit-setup-for-sas-compatible-systems
 
-    ALTAIR CONFIGURATIONS
+    CONFIGURATIONS
     SLC & ULTRAEDIT
 
     Prepared by: Roger DeAngelis
