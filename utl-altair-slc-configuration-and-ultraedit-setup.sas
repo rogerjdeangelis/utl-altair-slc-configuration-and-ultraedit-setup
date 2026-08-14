@@ -1,32 +1,32 @@
-/*--- ctrl-alt-R reads this line and saves the program at the path below 
-save "c:/utl/utl-chapter-I-configuration-and-ultraedit-setup-for-sas-compatible-systems.sas"
----*/     
+    /*--- ctrl-alt-R reads this line and saves the program at the path below 
+    save "c:/utl/utl-chapter-I-configuration-and-ultraedit-setup-for-sas-compatible-systems.sas"
+    ---*/     
 
- Chapter-I-configuration-and-ultraedit-setup-for-sas-compatible-systems    
+    Chapter-I-configuration-and-ultraedit-setup-for-sas-compatible-systems    
  
- The objective is to clone SAS DMS editor using UltraEdit.
+    The objective is to clone SAS DMS editor using UltraEdit.
  
- This documents users of UltraEdit Version 2025.1.0.31 64-bit.
- The top ribbon must look like this to use this documentation (this is the contemporary menu (not the traditional menu))
+    This documents users of UltraEdit Version 2025.1.0.31 64-bit.
+    The top ribbon must look like this to use this documentation (this is the contemporary menu (not the traditional menu))
  
-   File  Home  EDIT  Format  View  Coding  Project  Layout  Window  Advanced 
+    File  Home  EDIT  Format  View  Coding  Project  Layout  Window  Advanced 
    
-   Although UltraEdit does not have a command line, UltraEdit has powerful scripting.
-   Basically a weaker version of sas command macros?
+    Although UltraEdit does not have a command line, UltraEdit has powerful scripting.
+    Basically a weaker version of sas command macros?
    
        1  macro record (recording commands and assigning to a multi-key action)
        2  JavaScript scripting with just UltraEdit commands
        3  JavaScript combines scripting with external programs, like SAS, slc or Jenner Analytics
  
-    Also, if you submit a program without making any changes, nothing will happen.
+     Also, if you submit a program without making any changes, nothing will happen.
   
-    Too long to post; see GitHub
-    https://github.com/rogerjdeangelis/utl-chapter-I-configuration-and-ultraedit-setup-for-sas-compatible-systems
+     Too long to post; see GitHub
+     https://github.com/rogerjdeangelis/utl-chapter-I-configuration-and-ultraedit-setup-for-sas-compatible-systems
     
-    CONFIGURATIONS
-    ULTRAEDIT
+     CONFIGURATIONS
+     ULTRAEDIT
 
-    TABLE OF CONTENTS
+     TABLE OF CONTENTS
 
      I. SLC CONFIGURATION WIN 11 64bit
      
