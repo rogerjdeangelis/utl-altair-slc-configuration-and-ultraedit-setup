@@ -1,74 +1,117 @@
-    Configuration and UltraEdit setup
-     
-    Too long to post here, see github
+/*--- ctrl-alt-R reads this line and saves the program at the path below 
+save "c:/utl/utl-chapter-I-configuration-and-ultraedit-setup-for-sas-compatible-systems.sas"
+---*/     
 
-    Too long to post, see github
+ Chapter-I-configuration-and-ultraedit-setup-for-sas-compatible-systems    
+ 
+ The objective is to clone SAS DMS editor using UltraEdit.
+ 
+ This documents users of UltraEdit Version 2025.1.0.31 64-bit.
+ The top ribbon must look like this to use this documentation (this is the contemporary menu (not the traditional menu))
+ 
+   File  Home  EDIT  Format  View  Coding  Project  Layout  Window  Advanced 
+   
+   Although UltraEdit does not have a command line, UltraEdit has powerful scripting.
+   Basically a weaker version of sas command macros?
+   
+       1  macro record (recording commands and assigning to a multi-key action)
+       2  JavaScript scripting with just UltraEdit commands
+       3  JavaScript combines scripting with external programs, like SAS, slc or Jenner Analytics
+ 
+    Also, if you submit a program without making any changes, nothing will happen.
+  
+    Too long to post; see GitHub
     https://github.com/rogerjdeangelis/utl-chapter-I-configuration-and-ultraedit-setup-for-sas-compatible-systems
     
     CONFIGURATIONS
     ULTRAEDIT
 
-    Prepared by: Roger DeAngelis
-    System: Windows 11 64-bit
-    Date: November 2025
-
     TABLE OF CONTENTS
 
-    I. SLC Configuration (Windows 11 64-bit)
+     I. SLC CONFIGURATION WIN 11 64bit
+     
+      1. Create environment variable
+      2. Create path environment variable
+      3. Create folder structures (these form a sandbox)
+      4. Key files
+      5. Create c:/wpsoto/autoexec.sas
+     
+     II ULTRAEDIT CONFIGURATION WIN 11 64bit
+       
+      1. Download and install UltraEdit. 
+      2. Make the Windows clipboard your default clipboard in UltraEdit.
+      3. Create SAS DMS window vertical layout
+     
+     III RUN A SIMPLE AS COMPATIBLE PROGRAM 
+      1.  Turn line numbers on 
+      2.  Run the program 
+      3.  Immediate output 
+      4.  Save  all user customizations
 
-     1. Create Environment Variable
-     2. Create Folder Structures
-     3. Key Files and Configuration Edits
-     4. Create Autoexec File
+   I. SLC CONFIGURATION WIN 11 64bit
 
-    II. UltraEdit Configuration (Windows 11 64-bit)
+      1. Create environment variable
 
-     1. Installation and Licensing
-     2. Preparing Required Files
-     3. Setting Up Run Command
-     4. Multi-Panel Tiling Layout
-     5. Automatic File Refresh
-     6. Layout and Workspace Management
-     7. Keyboard Shortcuts
-     8. Running Programs
-
-    III. Sample Reproducible Problems
-
-
-      SLC CONFIGUARATION WIN 11 64bit
-
-      1 Create environment variable
-
-          a. In the win 11 search box type
+          a. In the Windows 11 search box, type
              type 'environment variables'
 
-          b  select 'edit environment variables'
+          b. Select 'Edit environment variables'
 
-          c  user variables > select edit add
+          c. User variables > select Edit/Add
 
-          d  enter this  in variable anf value fields
+          d. Enter this  in the variable and value fields
              VARIABLE              VALUE
 
              ALTAIRSLC_CONFIG      C:\wpscfg\altairslc_local.cfg
 
-          e  refresh environment variable
-             open command window
-             enter
-             refreshenv
-             if refreshenv fails, open task manager cnt-alt-delete and restart windows explorer
-             refreshenv worked in win 10, but failled after I instlled win 11?
-
+          e. Refresh environment variable
+             
+             Open Task Manager (Ctrl+Alt+Delete)
+             Type Ctrl to freeze Task Manager
+             find 'windows explorer' 
+             right-click on windows explorer
+             Restart (this activates the path)
+             close 
+             If you have UE open, you need to close and restart for 
+             for the path to be active. 
+ 
           f  check the environment variable,
              open a DOS command window (cmd.exe)
              enter
              echo %ALTAIRSLC_CONFIG%
+             You should see
+             C:\wpscfg\altairslc_local.cfg
+             
+      2. Create a path enviroment variable
 
-       2 Create folder structures
+          a. In the Windows 11 search box, type
+             type 'environment variables'
+
+          b. Select 'edit environment variables'
+
+          c. Select 'Environment variables'
+          
+          d. Click on 'Path' in System variables
+             Edit environment variable> New
+             add
+             C:\Program Files\Altair\SLC\2026\bin
+             ok>apply
+             
+          Open Task Manager (Ctrl+Alt+Delete)
+             Type Ctrl to freeze Task Manager
+             find 'windows explorer' 
+             Right-click on Windows Explorer
+             Restart (this activates the path)
+             close 
+             If you have UE open, you need to close and restart it 
+             for the path to be active. 
+                         
+       3 Create folder structures (these form a sandbox)
 
           a  c:/slc/
-              current.sas for frozen left panel in ultraedit
-              current.log for froozen center panel in ultra edit
-              current.lst for frozen right panel in ultra edit
+              current.sas for frozen left panel in UltraEdit
+              current.log for frozen center panel in UltraEdit
+              current.lst for frozen right panel in UltraEdit
 
           b  c:/wpsoto    for autocall macros
 
@@ -78,7 +121,7 @@
 
           e  d:/wpswrkx for permanent work directory
 
-       3  Key files
+       4  Key files
 
           a  COPY C:\Program Files\Altair\SLC\2026\altairslc.cfg
              To
@@ -92,289 +135,188 @@
             -AUTOEXEC 'c:/wpsoto/autoexec.sas'
             -SASUSER 'd:/wpsusr'
 
-        4  Create c:/wpsoto/autoexec.sas
+       5  Create c:/wpsoto/autoexec.sas
 
+         a.  autoexec file                                 
+           
+            data _null_;
+              putlog "autexec started" currtime;
+            run;
+            
+            data _null_;
+              file print;
+              curr_time = put(time(), time8.);
+              put    "LIST: "  curr_time;
+              putlog "LOG:  "  curr_time;
+            run;
+            
+            options sasautos=("c:/otojnr");
+            run;
+            
+            libname workx "d:\wpswrkx";
+            libname sasuser "c:/etc";
+              
+         b  data _null_;
+              putlog "autexec completed" currtime;
+            run;      
 
-           ods _all_ close;
-           ods listing;
-           options ls=255 ps=65
-            nofmterr nocenter
-            nodate nonumber
-            noquotelenma
-            compress=no
-            FORMCHAR='|----|+|---+=|-/\<>*')
-           ;
-           run;
+    II  ULTRAEDIT CONFIGURATION WIN 11 64bit       
 
-           libname workx "d:/wpswrkx"; /*--- save workspace for subsequent submissons ---*/
-
-
-    IV  ULTRAEDIT CONFIGURATION WIN 11 64bit      edit the system environment variables
-
-      0    Locate wps.exe
-
-           May be at
-           C\Program Files\Altair\SLC\2025\bin
-
-           In the win 11 search box enter
-
-           advanced system properties
-           select enviorment variable in system properties
-           in system variables
-           highlisgt path
-           then new
-           and add
-           C\Program Files\Altair\SLC\2025\bin
-           ok and apply(if present)
-           ok again
-
-           Check path
-           refreshenv
-           open a cmd window
-           echo %PATH%
-
-           If this fails
-           open task manager (cntl-alt-delete)
-           restart windows explorer
-           open a NEW command window (cmd.exe)
-           echo %PATH%
-
-        1 Download and install Ultraedit. I installed the free 7 day trial and later purchased a
+        1 Download and install UltraEdit. I installed the free 7-day trial and later purchased a
           $99 yearly subscription.
-          If you install the free 7 day trial you can later activate using just the license
+          If you install the free 7-day trial, you can later activate it using just the license
           key in the verification email.
           https://www.ultraedit.com/catalog-product/ultraedit-sub/
-
-        2 You should already have these files from above. It is ok if they are empty.
-
+      
+        
+        2. Make the Windows clipboard your default clipboard in UltraEdit.
+          You need the Windows clipboard so you can copy and paste to other applications
+         
+          File>open
           c:/slc/current.sas
-          c:/slc/currentlog
-          c:/slc/current.lst
-
-        2.5 Better way to run program (only alt-f1)
-          Single action to run your Jenner Alalytics or Altair SLC programs
-
-          How to press 'alt-f1' multikey to run you jenner analytics programu(or sas or altair slc)
-
-          Go to advanced > tool configuration. It is the 'hammer icon' and select configuration.
-          Fill in
-
-          Menu Item Name::
-          jnr
-
-          Command Line: (you can add other options)
-          cmd /c start /B C:\Progra~1\Jenner\jenner.exe %f -log "%p%n.log" -print "%p%n.lst" -work "d:/wpswrk"
-
-          Working directory:
-          c:/slc
-
-          apply then ok
-
-          This is what I could not figure out earlier.
-
-          Menu Item Name 'jnr' is mapped to 'User Tool 1' in advanced > settings (the gear icon).
-          Go to advanced > settings (the gear icon)  > toolbar/menu > key mappings
-          Select 'User tool 1'
-          Existing Keys: (press alt-1)
-          alt-f1
-
-        3 Open ultraedit (deprecated use 2.5 run program using alt-f1 abd alt-r)
-
-          Click on advanced tab in upper right
-
-          Click on this box
-
-          +---------+
-          | Run     |
-          | WINDOWS |
-          | PROGRAM |
-          +---------+
-
-          Click on menu item
-
-          Run Windows command
-
-          In the command box type
-
-          cmd /c start /B wps %f -log "%p%n.log" -print "%p%n.lst"
-
-          In the working directory box
-          Type
-
-          c:/slc
-
-          I chose handle Outputs as ANSI
-
-          To eliminate mouse actions and run your program using two key mappings
-
-          Go to advanced > setings > key mapping
-
-          Look for 'run window program'
-          shoupld see
-          'existing key' (should be empty)
-
-          type this in existing key box
-
-          Hold down the alt key and add the '1'
-          The result should look like 'alt + 1'
-
-          close settings
-
-          alt-f1 abd alt-r  will run your program
-
-    10   How to run your program
-
-         You need a two key mapping
-
-         Hold alt key down and hit 1
-         when run box opend
-         Hold down alt key and hit R
-
-
-       4 In upper left click on File
-
-          Click on open
-
-          go to c:/slc
-
-          Hold down the control key and
-          select
-
-          current.sas
-          currentlog
-          current.lst
-
-          or select one at a time
-
-    5 You should see
-
-         +--------------------+-------------------+--------------------+
-         | c:\slc\current.sas | c:\slc\currentlog | c:\slc\current.lst |
-         +--------------------+-------------------+--------------------+
-
-    6    Click on Window ( it is next to Advanced in upper right )
-
-         Click on enable Tiling (very important)
-
-         Click on Cascade & Tile
-
-         Click on Tile Vertical
-
-    7    You should see
-
+          
+          In the ":/slc/current.sas" window
+          Ctrl+0 (control zero actives windows clipboard. note ctrl+1-9 activated UE clipboards)
+          click on the UE icon (very top on the left)
+          click on Close
+          
+          when you reopen UE to make the chage permanent 
+          you'll see C0 in c:/slc/current.sas window
+                    
+          /**************************/
+          /* c:\slc\current.sas     */
+          /* ...                    */
+          /**************************/ 
+          /*  ln1,col1,C0 DOS utf-8 */  At the very bootom of the widow
+          /**************************/ 
+          
+        3 Create SAS DMS window vertical layout  
+        
+          Open 
+          c:/slc/
+             current.sas for frozen left panel in UltraEdit
+             current.log for frozen center panel in UltraEdit
+             current.lst for frozen right panel in UltraEdit
+             
+          The three files will appear in cascade layout do the following to tile vertically   
+          
+          advanced>settings>keymapping>tile vertical>commands>tile vertical
+          Enter Ctrl+Alt+T into 'press new multi-key'
+          Click on the Yellow UE icon and select Close
+        
+         Now you can convert the cascade into vertical tiles
+        
          /**********************************************************************************/
          /*    C:\slc\current.lst     |     c:\slc\current.sas    |    c:\slc\current.log  */
          /*                           |                           |                        */
-         /*                           |                           |                        */
-         /*                           |                           |                        */
-         /*                           |                           |                        */
-         /*                           |                           |                        */
-         /*                           |                           |                        */
-         /*                           |                           |                        */
-         /*                           |                           |                        */
-         /*                           |                           |                        */
-         /*                           |                           |                        */
-         /*                           |                           |                        */
-         /*                           |                           |                        */
-         /*                           |                           |                        */
-         /*                           |                           |                        */
+         /* ..                        |                           |                        */
          /**********************************************************************************/
+                                        ln1,col1,C0 DOS utf-8
+        
+    III.  Run a simple as compatible program program    
+        
+       1.  Turn line numbers on  
+           view>line numbers 
+      
+           Go to Advanced> ('hammer icon')>user tools>configuration.
+           Fill in
 
-    8    You can easily rearrange the panels, just drag and drop
+           Menu Item Name::
+           SLC
 
-    9    Set automatic refresing of log and list
-
-         click on advanced in upper right
-
-         click on the gear settings (not backup settings)
-
-         scroll down to file handling > file change detection > automatic update file changes
-
-    10   save layout and workspace (only need to do this once or when you change lyaouts or workspace)
-
-         click on layout (again)
-
-         click on
-
-          +---------+
-          | LAYOUTS |
-          +---------+
-
-         click on
-
-         manage layouts
-
-         click on first item
-
-         Balanced Save [22.04.25]
-
-         A box will pop up
-
-         In the name box give a name for your layout (mylayout)
-
-         click on save
-
-         Next time you open UE you will have mylayout.
-         You can have mutiple layouts
-
-    11    Save your workspces and layouts
-
-         Go to Advanced > backup settings >selct a directory to save and click on backup
-
-    12   Close UE
-         in the very top task bar click on yellow circle with ue text and close
-
-
-    13    Deprecated, use 2.5
-          To eliminate mouse actions and run your program using two key mappings
-
-          Go to advanced > setings > key mapping
-
-          Look for 'run window program'
-          shoupld see
-          'existing key' (should be empty)
-
-          type this in existing key box
-
-          Hold down the alt key and add the '1'
-          The result should look like 'alt + 1'
-
-          close settings
-
-          How to run your program
-
-          You need a two key mapping
-
-          Hold alt key down and hit 1
-          when run box opend
-          Hold down alt key and hit R
+           Command Line: (you can add other options)                                                                                                                              
+           wps %f -sasautos "c:/otojnr" -log "%p%n.log" -print "%p%n.lst" -work "d:/wpswrk"  -sasuser c:\etc -autoexec c:/otojnr/autoexec.sas                                                                                                                              
+                                                                                                                                         
+           Working directory:                                                                                                                              
+           c:/slc                                                                                                                              
+                                                                                                                                         
+           If slc is the first tool, then                                                                                                                              
+           Menu Item Name 'SLC' is mapped to 'User Tool 1' in advanced > settings (the gear icon)>key mapping                                                                                                                              
+           If you add another menu item, it will be mapped to "User Tool 2"                                                                                                                              
+                                                                                                                                         
+           Go to advanced > settings (the gear icon)  > toolbar/menu > key mappings                                                                                                                              
+                                                                                                                                         
+           Select 'User Tool 1'                                                                                                                                      
+           Ctrl+Alt+J  (in the press new key box to run the jenner CLI)                                                                                                                              
+           Click on the Yellow UE icon and select Close                                                                                                                              
+           For Jenner analytics use                                                                                                                              
+                                                                                                                                         
+        2  Run the program    
+        
+           /**********************************************************************************/ 
+           /*    C:\slc\current.lst     |     c:\slc\current.sas    |    c:\slc\current.log  */
+           /*                           |                           |                        */
+           /*                           |   data tst;               |                        */
+           /*                           |     x=2;                  |                        */
+           /*                           |   run;                    |                        */
+           /*                           |                           |                        */
+           /*                           |   proc print data=tst;    |                        */
+           /*                           |   run                     |                        */
+           /*                           |                           |                        */
+           /*                           |                           |                        */
+           /*                           |                           |                        */
+           /*                           |                           |                        */
+           /*                           |                           |                        */
+           /*                           |                           |                        */
+           /*                           |                           |                        */
+           /**********************************************************************************/
           
-    V Versioning in UltrEdit
-    UltraEdit has a built-in Version Backup feature that can keep a numbered copy each time you save. 
-    It is convenient for local, single-file history; use Git if you need commits, diffs, branches, and shared history.
+                                                                                                                                      
+           Change focus to c:\slc\current.sas                                                                                                             
+                                                                                                                                           
+           Ctrl+Alt+J   (runs the program)                                                                                                                  
+                                                                                                                                           
+       3  Immediate output                                                                                                                
+                                                                                                                                           
+                                                                                                                        
+           /***********************************************************************************************************************/                                                                                             
+           /*    C:\slc\current.lst     |     c:\slc\current.sas    |  c:\slc\current.log                                         */                                                                                            
+           /*                           |                           |                                                             */                                                                                            
+           /*  obs   x                  |   data tst;               |  NOTE: Copyright (c) 2026 Jenner Analytics Ltd ,London      */                                                                            
+           /* ----   -                  |     x=2;                  |                                                             */                                                                                            
+           /*   1    2                  |   run;                    |   autexec started.                                          */                                   
+           /*                           |                           |                                                             */                   
+           /*                           |   proc print data=tst;    |   NOTE: Wrote _null_ (0 rows, 0 columns).                   */                                                          
+           /*                           |   run                     |   NOTE: DATA elapsed:                                       */                                      
+           /*                           |                           |     wall  0.00 seconds                                      */                                                                 
+           /*                           |                           |     cpu   0.00 seconds                                      */                                                               
+           /*                           |                           |   NOTE: DATA _null_                                         */                                                               
+           /*                           |                           |                                                             */                                                               
+           /*                           |                           |   LOG:  14:19:29                                            */                                                               
+           /*                           |                           |   NOTE: DATA _null_ completed. Output written to FILE PRINT */                                                               
+           /*                           |                           |   NOTE: Option SASAUTOS changed to c:/otojnr.               */                                                               
+           /*                           |                           |   NOTE: Library WORKX assigned path=d:\wpswrkx.             */                                                               
+           /*                           |                           |   NOTE: Library SASUSER assigned path=c:/etc.               */                                                               
+           /*                           |                           |   NOTE: DATA _null_                                         */                                                                 
+           /*                           |                           |                                                             */                                                           
+           /*                           |                           |   autexec completed.                                        */                                                           
+           /*                           |                           |                                                             */                                                           
+           /*                           |                           |   NOTE: Wrote tst (1 rows, 1 columns).                      */                              
+           /*                           |                           |   NOTE: DATA elapsed:                                       */             
+           /*                           |                           |     wall  0.00 seconds                                      */
+           /*                           |                           |     cpu   0.00 seconds                                      */
+           /*                           |                           |   NOTE: PROC PRINT data=tst                                 */
+           /*                           |                           |                                                             */
+           /*                           |                           |   NOTE: PROC PRINT completed: 1 observations printed        */
+           /*                           |                           |                                                             */
+           /*                           |                           |                                                             */
+           /*                           |                           |                                                             */  
+           /***********************************************************************************************************************/                 
+    
+    
+       4  Save  all user customizations
+    
+          advanced>backup settings>backup>select all>  
+          Backup Directory: c:/ver     
+          
+          Click backup box 
+          
+          When done 
+          
+          right-click on yellow UE and close
+            
+ /*--- end ---*/
 
-    Enable version backups
-    1 Open Advanced → Configuration (in newer layouts this may be Advanced → Settings).
 
-    2 Go to File Handling → Backup.
-
-    3 Under Version backup, enable On save.
-
-    4 Set a filename format that includes $c, the sequential version counter.
-
-    5 Set Maximum number of backups—use -1 for no limit.    
-
-    You should see in the current working directory
-    type hotkey ctrl-s and you should see
-    c:/slc
-
-    program.sas
-    program(0).sas
-  
-    In you versionin directory you should
-  
-    program.sasbak (this will be overriden?) 
- 
-     
  
 
