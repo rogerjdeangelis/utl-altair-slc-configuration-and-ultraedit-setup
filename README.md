@@ -1,26 +1,26 @@
-    /*--- ctrl-alt-R reads this line and saves the program at the path below 
-    save "c:/utl/utl-chapter-I-configuration-and-ultraedit-setup-for-sas-compatible-systems.sas"
-    ---*/     
+  /*--- ctrl-alt-R reads this line and saves the program at the path below 
+  save "c:/utl/utl-chapter-I-configuration-and-ultraedit-setup-for-sas-compatible-systems.sas"
+  ---*/     
 
-    Chapter-I-configuration-and-ultraedit-setup-for-sas-compatible-systems    
+  Chapter-I-configuration-and-ultraedit-setup-for-sas-compatible-systems    
  
-    The objective is clone SAS DMS editor using ultraedit.
+   The objective is to clone SAS DMS editor using UltraEdit.
  
-    This documents users UltaEdit Version 2025.1.0.31 64-bit.
-    The top ribbon must look like this to use this documentation (this is the contempory menu (not the tradidtional menu))
+   This documents users of UltraEdit Version 2025.1.0.31 64-bit.
+   The top ribbon must look like this to use this documentation (this is the contemporary menu (not the traditional menu))
  
-    File  Home  EDIT  Format  View  Coding  Project  Layout  Window  Advanced 
+   File  Home  EDIT  Format  View  Coding  Project  Layout  Window  Advanced 
    
-    Although ultraedit does not have a command line, ultraedit has powerfull scripting.
-    Basically a weaker version of sas command macros?
+   Although UltraEdit does not have a command line, UltraEdit has powerful scripting.
+   Basically a weaker version of sas command macros?
    
-       1  macro record (recording commands and assigning to a mutikey action)
-       2  javascript scripting with just ultra edit command
-       3  javascipt the combines scriptiong with external programs, like sas, slc or jenner analytics
+       1  macro record (recording commands and assigning to a multi-key action)
+       2  JavaScript scripting with just UltraEdit commands
+       3  JavaScript combines scripting with external programs, like SAS, slc or Jenner Analytics
  
-     Also if you submit a program without naking any changes, nothin will happem.
+    Also, if you submit a program without making any changes, nothing will happen.
   
-    Too long to post, see github
+    Too long to post; see GitHub
     https://github.com/rogerjdeangelis/utl-chapter-I-configuration-and-ultraedit-setup-for-sas-compatible-systems
     
     CONFIGURATIONS
@@ -31,48 +31,48 @@
      I. SLC CONFIGURATION WIN 11 64bit
      
       1. Create environment variable
-      2. Create path enviroment variable
+      2. Create path environment variable
       3. Create folder structures (these form a sandbox)
       4. Key files
       5. Create c:/wpsoto/autoexec.sas
      
      II ULTRAEDIT CONFIGURATION WIN 11 64bit
        
-      1. Download and install Ultraedit. 
-      2. Make the windows clipboard your default clipboard in ultraedit.
+      1. Download and install UltraEdit. 
+      2. Make the Windows clipboard your default clipboard in UltraEdit.
       3. Create SAS DMS window vertical layout
      
-     III RUN A SIMPLE AS COMPATIBLE PROGRAM PROGRAM 
+     III RUN A SIMPLE AS COMPATIBLE PROGRAM 
       1.  Turn line numbers on 
       2.  Run the program 
       3.  Immediate output 
-      4.  Save  all user cutomizations
+      4.  Save  all user customizations
 
-   I. SLC CONFIGUARATION WIN 11 64bit
+   I. SLC CONFIGURATION WIN 11 64bit
 
-      1 Create environment variable
+      1. Create environment variable
 
-          a. In the win 11 search box type
+          a. In the Windows 11 search box, type
              type 'environment variables'
 
-          b  select 'edit environment variables'
+          b. Select 'Edit environment variables'
 
-          c  user variables > select edit add
+          c. User variables > select Edit/Add
 
-          d  enter this  in variable anf value fields
+          d. Enter this  in the variable and value fields
              VARIABLE              VALUE
 
              ALTAIRSLC_CONFIG      C:\wpscfg\altairslc_local.cfg
 
-          e  refresh environment variable
+          e. Refresh environment variable
              
-             open task manager (ctrl-alt-delete)
-             Type ctrl to freeze task manager
+             Open Task Manager (Ctrl+Alt+Delete)
+             Type Ctrl to freeze Task Manager
              find 'windows explorer' 
-             right click on windows explorer
-             restart (this activates the path)
+             right-click on windows explorer
+             Restart (this activates the path)
              close 
-             If you have UE open you need to close and restart for 
+             If you have UE open, you need to close and restart for 
              for the path to be active. 
  
           f  check the environment variable,
@@ -82,36 +82,36 @@
              You should see
              C:\wpscfg\altairslc_local.cfg
              
-      2 Create path enviroment variable
+      2. Create a path enviroment variable
 
-          a. In the win 11 search box type
+          a. In the Windows 11 search box, type
              type 'environment variables'
 
-          b  select 'edit environment variables'
+          b. Select 'edit environment variables'
 
-          c  select 'environment variables'
+          c. Select 'Environment variables'
           
-          d  click on 'path' in system variables
-             edit enviroment variable>new
+          d. Click on 'Path' in System variables
+             Edit environment variable> New
              add
              C:\Program Files\Altair\SLC\2026\bin
              ok>apply
              
-          e  open task manager (ctrl-alt-delete)
-             Type ctrl to freeze task manager
+          Open Task Manager (Ctrl+Alt+Delete)
+             Type Ctrl to freeze Task Manager
              find 'windows explorer' 
-             right click on windows explorer
-             restart (this activates the path)
+             Right-click on Windows Explorer
+             Restart (this activates the path)
              close 
-             If you have UE open you need to close and restart for 
+             If you have UE open, you need to close and restart it 
              for the path to be active. 
                          
        3 Create folder structures (these form a sandbox)
 
           a  c:/slc/
-              current.sas for frozen left panel in ultraedit
-              current.log for froozen center panel in ultra edit
-              current.lst for frozen right panel in ultra edit
+              current.sas for frozen left panel in UltraEdit
+              current.log for frozen center panel in UltraEdit
+              current.lst for frozen right panel in UltraEdit
 
           b  c:/wpsoto    for autocall macros
 
@@ -137,7 +137,7 @@
 
        5  Create c:/wpsoto/autoexec.sas
 
-         a  autoexec file                                 
+         a.  autoexec file                                 
            
             data _null_;
               putlog "autexec started" currtime;
@@ -162,26 +162,26 @@
 
     II  ULTRAEDIT CONFIGURATION WIN 11 64bit       
 
-        1 Download and install Ultraedit. I installed the free 7 day trial and later purchased a
+        1 Download and install UltraEdit. I installed the free 7-day trial and later purchased a
           $99 yearly subscription.
-          If you install the free 7 day trial you can later activate using just the license
+          If you install the free 7-day trial, you can later activate it using just the license
           key in the verification email.
           https://www.ultraedit.com/catalog-product/ultraedit-sub/
       
         
-        2 Make the windows clipboard your default clipboard in ultraedit.
-          You need the windows clipboard so you can copy and paste to other applications
+        2. Make the Windows clipboard your default clipboard in UltraEdit.
+          You need the Windows clipboard so you can copy and paste to other applications
          
           File>open
           c:/slc/current.sas
           
           In the ":/slc/current.sas" window
-          ctrl+0 (control zero actives windows clipboard. note ctrl+1-9 activated UE clipboards)
+          Ctrl+0 (control zero actives windows clipboard. note ctrl+1-9 activated UE clipboards)
           click on the UE icon (very top on the left)
-          click on close
+          click on Close
           
           when you reopen UE to make the chage permanent 
-          yould see C0 in c:/slc/current.sas window
+          you'll see C0 in c:/slc/current.sas window
                     
           /**************************/
           /* c:\slc\current.sas     */
@@ -194,15 +194,15 @@
         
           Open 
           c:/slc/
-             current.sas for frozen left panel in ultraedit
-             current.log for frozen center panel in ultra edit
-             current.lst for frozen right panel in ultra edit
+             current.sas for frozen left panel in UltraEdit
+             current.log for frozen center panel in UltraEdit
+             current.lst for frozen right panel in UltraEdit
              
           The three files will appear in cascade layout do the following to tile vertically   
           
           advanced>settings>keymapping>tile vertical>commands>tile vertical
-          enter ctrl+alt+t into 'press new muti-key'
-          Click on the Yellow UE icon and select close
+          Enter Ctrl+Alt+T into 'press new multi-key'
+          Click on the Yellow UE icon and select Close
         
          Now you can convert the cascade into vertical tiles
         
@@ -218,7 +218,7 @@
        1.  Turn line numbers on  
            view>line numbers 
       
-           Go to advanced>('hammer icon')>user tools>configuration.
+           Go to Advanced> ('hammer icon')>user tools>configuration.
            Fill in
 
            Menu Item Name::
@@ -230,15 +230,15 @@
            Working directory:                                                                                                                              
            c:/slc                                                                                                                              
                                                                                                                                          
-           If slc is the first tool then                                                                                                                              
+           If slc is the first tool, then                                                                                                                              
            Menu Item Name 'SLC' is mapped to 'User Tool 1' in advanced > settings (the gear icon)>key mapping                                                                                                                              
-           If you add another menu item it will be mapped to "User Tool 2"                                                                                                                              
+           If you add another menu item, it will be mapped to "User Tool 2"                                                                                                                              
                                                                                                                                          
            Go to advanced > settings (the gear icon)  > toolbar/menu > key mappings                                                                                                                              
                                                                                                                                          
-           Select 'User tool 1'                                                                                                                                      
-           ctrl+alt+J  (in the press new key box to run the jenner CLI)                                                                                                                              
-           Click on the Yellow UE icon and select close                                                                                                                              
+           Select 'User Tool 1'                                                                                                                                      
+           Ctrl+Alt+J  (in the press new key box to run the jenner CLI)                                                                                                                              
+           Click on the Yellow UE icon and select Close                                                                                                                              
            For Jenner analytics use                                                                                                                              
                                                                                                                                          
         2  Run the program    
@@ -264,7 +264,7 @@
                                                                                                                                       
            Change focus to c:\slc\current.sas                                                                                                             
                                                                                                                                            
-           ctrl+alt+j   (runs the program)                                                                                                                  
+           Ctrl+Alt+J   (runs the program)                                                                                                                  
                                                                                                                                            
        3  Immediate output                                                                                                                
                                                                                                                                            
@@ -304,19 +304,17 @@
            /***********************************************************************************************************************/                 
     
     
-       4  Save  all user cutomizations
+       4  Save  all user customizations
     
           advanced>backup settings>backup>select all>  
           Backup Directory: c:/ver     
           
-          Click bacup box 
+          Click backup box 
           
           When done 
           
-          right mouse on yellow UE and close
+          right-click on yellow UE and close
             
-    /*--- end ---*/
-
      
  
 
