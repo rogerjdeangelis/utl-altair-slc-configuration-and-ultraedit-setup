@@ -18,7 +18,7 @@
        2  javascript scripting with just ultra edit command
        3  javascipt the combines scriptiong with external programs, like sas, slc or jenner analytics
  
-    Also if you submit a program without naking any changes, nothin will happem.
+     Also if you submit a program without naking any changes, nothin will happem.
   
     Too long to post, see github
     https://github.com/rogerjdeangelis/utl-chapter-I-configuration-and-ultraedit-setup-for-sas-compatible-systems
