@@ -3,7 +3,10 @@
    ---*/     
 
    Chapter-I-configuration-and-ultraedit-setup-for-sas-compatible-systems    
- 
+   
+    Note:  C:\slc\current.lst, c:\slc\current.sas, and  c:\slc\current.log are a sandbox.                  
+    When you want save production code. Press Ctl+Alt+2 to save your program in  the path in line 2 of the editor.
+    
     The objective is to clone SAS DMS editor using UltraEdit.
  
     This documents users of UltraEdit Version 2025.1.0.31 64-bit.
