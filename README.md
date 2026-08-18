@@ -1,6 +1,6 @@
-   /*--- ctrl-alt-R reads this line and saves the program at the path below 
-   save "c:/utl/utl-chapter-I-configuration-and-ultraedit-setup-for-sas-compatible-systems.sas"
-   ---*/     
+    /*--- Save my program
+    c:/utl/utl-chapter-III-ultraedit-macros-javascript-for-sas-compatible-systems.sas 
+    ---*/   
 
    Chapter-I-configuration-and-ultraedit-setup-for-sas-compatible-systems    
    
