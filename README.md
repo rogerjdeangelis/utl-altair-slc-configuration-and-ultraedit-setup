@@ -29,45 +29,45 @@
      CONFIGURATIONS
      ULTRAEDIT
 
-     TABLE OF CONTENTS
+     CONTENTS
 
      I. SLC CONFIGURATION WIN 11 64bit
      
-      1. Create environment variable
-      2. Create path environment variable
-      3. Create folder structures (these form a sandbox)
-      4. Key files
-      5. Create c:/wpsoto/autoexec.sas
+      a. Create environment variable
+      b. Create path environment variable
+      c. Create folder structures (these form a sandbox)
+      d. Key files
+      e. Create c:/wpsoto/autoexec.sas
      
      II ULTRAEDIT CONFIGURATION WIN 11 64bit
        
-      1. Download and install UltraEdit. 
-      2. Make the Windows clipboard your default clipboard in UltraEdit.
-      3. Create SAS DMS window vertical layout
+      a. Download and install UltraEdit. 
+      b. Make the Windows clipboard your default clipboard in UltraEdit.
+      c. Create SAS DMS window vertical layout
      
      III RUN A SIMPLE AS COMPATIBLE PROGRAM 
-      1.  Turn line numbers on 
-      2.  Run the program 
-      3.  Immediate output 
-      4.  Save  all user customizations
+      a.  Turn line numbers on 
+      b.  Run the program 
+      c.  Immediate output 
+      d.  Save  all user customizations
 
    I. SLC CONFIGURATION WIN 11 64bit
 
-      1. Create environment variable
+      a. Create environment variable
 
-          a. In the Windows 11 search box, type
+          1. In the Windows 11 search box, type
              type 'environment variables'
 
-          b. Select 'Edit environment variables'
+          2. Select 'Edit environment variables'
 
-          c. User variables > select Edit/Add
+          3. User variables > select Edit/Add
 
-          d. Enter this  in the variable and value fields
+          4. Enter this  in the variable and value fields
              VARIABLE              VALUE
 
              ALTAIRSLC_CONFIG      C:\wpscfg\altairslc_local.cfg
 
-          e. Refresh environment variable
+          5. Refresh the environment variable
              
              Open Task Manager (Ctrl+Alt+Delete)
              Type Ctrl to freeze Task Manager
@@ -78,29 +78,29 @@
              If you have UE open, you need to close and restart for 
              for the path to be active. 
  
-          f  check the environment variable,
+          6.  check the environment variable,
              open a DOS command window (cmd.exe)
              enter
              echo %ALTAIRSLC_CONFIG%
              You should see
              C:\wpscfg\altairslc_local.cfg
              
-      2. Create a path enviroment variable
+      b. Create a path environment variable
 
-          a. In the Windows 11 search box, type
+          1. In the Windows 11 search box, type
              type 'environment variables'
 
-          b. Select 'edit environment variables'
+          2. Select 'edit environment variables'
 
-          c. Select 'Environment variables'
+          3. Select 'Environment variables'
           
-          d. Click on 'Path' in System variables
+          4. Click on 'Path' in System variables
              Edit environment variable> New
              add
              C:\Program Files\Altair\SLC\2026\bin
              ok>apply
              
-          Open Task Manager (Ctrl+Alt+Delete)
+            Open Task Manager (Ctrl+Alt+Delete)
              Type Ctrl to freeze Task Manager
              find 'windows explorer' 
              Right-click on Windows Explorer
@@ -109,28 +109,28 @@
              If you have UE open, you need to close and restart it 
              for the path to be active. 
                          
-       3 Create folder structures (these form a sandbox)
+       c. Create folder structures (these form a sandbox)
 
-          a  c:/slc/
+          1  c:/slc/
               current.sas for frozen left panel in UltraEdit
               current.log for frozen center panel in UltraEdit
               current.lst for frozen right panel in UltraEdit
 
-          b  c:/wpsoto    for autocall macros
+          2  c:/wpsoto    for autocall macros
 
-          c  c:/wpscfg for config file
+          3  c:/wpscfg for config file
 
-          d  d:/wpswrk for temporary work directory
+          4  d:/wpswrk for temporary work directory
 
-          e  d:/wpswrkx for permanent work directory
+          5  d:/wpswrkx for permanent work directory
 
-       4  Key files
+       d.  Key files
 
-          a  COPY C:\Program Files\Altair\SLC\2026\altairslc.cfg
+          1  COPY C:\Program Files\Altair\SLC\2026\altairslc.cfg
              To
              C:\wpscfg\altairslc_local.cfg
 
-          b  Edt C:\wpscfg\altairslc_local.cfg user config file given by the environment variable ALTAIRSLC_CONFIG
+          2  Edt C:\wpscfg\altairslc_local.cfg user config file given by the environment variable ALTAIRSLC_CONFIG
 
             -WORK 'd:\wpswrk'
             -set SASAUTOS ('!wpshome\sasmacro' 'c:/wpsoto')
@@ -138,9 +138,9 @@
             -AUTOEXEC 'c:/wpsoto/autoexec.sas'
             -SASUSER 'd:/wpsusr'
 
-       5  Create c:/wpsoto/autoexec.sas
+       e.  Create c:/wpsoto/autoexec.sas
 
-         a.  autoexec file                                 
+         1.  autoexec file                                 
            
             data _null_;
               putlog "autexec started" currtime;
@@ -159,20 +159,20 @@
             libname workx "d:\wpswrkx";
             libname sasuser "c:/etc";
               
-         b  data _null_;
+         2.  data _null_;
               putlog "autexec completed" currtime;
             run;      
 
     II  ULTRAEDIT CONFIGURATION WIN 11 64bit       
 
-        1 Download and install UltraEdit. I installed the free 7-day trial and later purchased a
+        a. Download and install UltraEdit. I installed the free 7-day trial and later purchased a
           $99 yearly subscription.
           If you install the free 7-day trial, you can later activate it using just the license
           key in the verification email.
           https://www.ultraedit.com/catalog-product/ultraedit-sub/
       
         
-        2. Make the Windows clipboard your default clipboard in UltraEdit.
+        b. Make the Windows clipboard your default clipboard in UltraEdit.
           You need the Windows clipboard so you can copy and paste to other applications
          
           File>open
@@ -193,7 +193,7 @@
           /*  ln1,col1,C0 DOS utf-8 */  At the very bootom of the widow
           /**************************/ 
           
-        3 Create SAS DMS window vertical layout  
+        c. Create SAS DMS window vertical layout  
         
           Open 
           c:/slc/
@@ -218,7 +218,7 @@
         
     III.  Run a simple as compatible program program    
         
-       1.  Turn line numbers on  
+       a.  Turn line numbers on  
            view>line numbers 
       
            Go to Advanced> ('hammer icon')>user tools>configuration.
@@ -244,7 +244,7 @@
            Click on the Yellow UE icon and select Close                                                                                                                              
            For Jenner analytics use                                                                                                                              
                                                                                                                                          
-        2  Run the program    
+        b.  Run the program    
         
            /**********************************************************************************/ 
            /*    C:\slc\current.lst     |     c:\slc\current.sas    |    c:\slc\current.log  */
@@ -269,7 +269,7 @@
                                                                                                                                            
            Ctrl+Alt+J   (runs the program)                                                                                                                  
                                                                                                                                            
-       3  Immediate output                                                                                                                
+       c.  Immediate output                                                                                                                
                                                                                                                                            
                                                                                                                         
            /***********************************************************************************************************************/                                                                                             
@@ -307,7 +307,7 @@
            /***********************************************************************************************************************/                 
     
     
-       4  Save  all user customizations
+       d.  Save  all user customizations
     
           advanced>backup settings>backup>select all>  
           Backup Directory: c:/ver     
@@ -318,11 +318,3 @@
           
           right-click on yellow UE and close
             
-     
- 
-
-
-
-
-
-
